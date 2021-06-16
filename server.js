@@ -3,6 +3,7 @@
 
 //web framework - express
 const express = require('express');
+//Cross-Origin Resource Sharing (CORS)
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
@@ -31,7 +32,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-// User cors for cross origin allowance
+// User cors for cross origin allowance. Use cors middleware
 app.use(cors());
 
 // Set a port to run the server on
