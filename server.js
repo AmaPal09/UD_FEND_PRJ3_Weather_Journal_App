@@ -42,13 +42,11 @@ const port = 3000;
 app.use(express.static('website'));
 
 // Project Data
-const projectData = [
-	{
-		l1: 'html',
-		l2: 'css',
-		l3: 'js'
-	}
-];
+const projectData ={
+	l1: 'html',
+	l2: 'css',
+	l3: 'js'
+};
 
 /*GET Method
 These routing methods specify a callback function (sometimes called
