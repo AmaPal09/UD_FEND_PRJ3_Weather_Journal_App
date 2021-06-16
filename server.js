@@ -41,6 +41,30 @@ const port = 3000;
 // Serve static files from website folder and connect them with the server
 app.use(express.static('website'));
 
+// Project Data
+const projectData = {
+	l1: 'html',
+	l2: 'css',
+	l3: 'js'
+}
+
+/*GET Method
+These routing methods specify a callback function (sometimes called
+“handler functions”) called when the application receives a request
+to the specified route (endpoint) and HTTP method. In other words,
+the application “listens” for requests that match the specified
+route(s) and method(s), and when it detects a match, it calls the
+specified callback function.
+*/
+app.get('/getData', getData);
+
+function getData(req, res) {
+	console.log("Hello World");
+	console.log(`sending back: ${projectData}`)
+	res.send(projectData);
+};
+
+
 // Keep the server running and listen for activity
 app.listen(port, ()=>{
 	console.log(`Server running on port: ${port}`);
