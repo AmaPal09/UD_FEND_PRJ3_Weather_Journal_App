@@ -48,6 +48,8 @@ const projectData = {
 	l3: 'js'
 };
 
+let data = [];
+
 /*GET Method
 These routing methods specify a callback function (sometimes called
 “handler functions”) called when the application receives a request
@@ -71,6 +73,15 @@ const getData = (req, res) => {
 
 app.get('/getData', getData);
 
+
+/*POST METHOD
+Post data from user to server
+*/
+app.post('/addRating', (req, res) => {
+	console.log("post request");
+	console.log(req.body);
+	res.send("POST received");
+});
 
 // Keep the server running and listen for activity
 app.listen(port, ()=>{
