@@ -62,6 +62,16 @@ app.get('/', (req, res) => {
 	res.send(projectData);
 });
 
+// Get request for getData route
+const getData = (req, res) => {
+	console.log("Get data get request");
+	console.log(projectData);
+	res.send(projectData);
+}
+
+app.get('/getData', getData);
+
+
 // Keep the server running and listen for activity
 app.listen(port, ()=>{
 	console.log(`Server running on port: ${port}`);
