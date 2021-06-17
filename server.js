@@ -79,8 +79,10 @@ Post data from user to server
 */
 app.post('/addRating', (req, res) => {
 	console.log("post request");
-	console.log(req.body);
-	res.send("POST received");
+	data.push(req.body);
+	console.log(data);
+	// res.send(`Recevied ${data[data.length-1]} from user`);
+	res.send("Recevied");
 });
 
 // Keep the server running and listen for activity
