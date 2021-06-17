@@ -39,7 +39,7 @@ app.use(cors());
 const port = 3000;
 
 // Serve static files from website folder and connect them with the server
-// app.use(express.static('website'));
+app.use(express.static('website'));
 
 // Project Data
 const projectData = {
@@ -81,8 +81,9 @@ app.post('/addRating', (req, res) => {
 	console.log("post request");
 	data.push(req.body);
 	console.log(data);
+	// console.log(res);
 	// res.send(`Recevied ${data[data.length-1]} from user`);
-	res.send("Recevied");
+	// res.send("Recevied");
 });
 
 // Keep the server running and listen for activity
