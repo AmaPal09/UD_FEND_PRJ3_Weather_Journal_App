@@ -23,4 +23,5 @@ const postData = async (url = '', data = {}) => {
 
 
 // POST request sent to the server
-postData('/addRating', {ratingScore:2});
+postData('/addRating', {temparature: 22, date: '10/10/2021',
+						userResponse: 'happy'});

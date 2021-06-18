@@ -48,7 +48,7 @@ const projectData = {
 	l3: 'js'
 };
 
-let data = [];
+let data = {};
 
 /*GET Method
 These routing methods specify a callback function (sometimes called
@@ -78,10 +78,14 @@ app.get('/getData', getData);
 Post data from user to server
 */
 app.post('/addRating', (req, res) => {
-	console.log("post request");
-	data.push(req.body);
+	// console.log(req.body);
+	// data.push(req.body);
+	data.temp = req.body.temparature;
+	data.date = req.body.date;
+	data.userRes = req.body.userResponse;
+	projectData.latestRecord = data;
 	console.log(data);
-	res.send(data);
+	res.send(projectData);
 	// res.send("Recevied");
 });
 
