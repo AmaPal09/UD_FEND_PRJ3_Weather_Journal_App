@@ -81,8 +81,7 @@ app.post('/addRating', (req, res) => {
 	console.log("post request");
 	data.push(req.body);
 	console.log(data);
-	// console.log(res);
-	// res.send(`Recevied ${data[data.length-1]} from user`);
+	res.send(data);
 	// res.send("Recevied");
 });
 

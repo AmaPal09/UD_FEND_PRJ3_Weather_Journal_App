@@ -13,7 +13,7 @@ const postData = async (url = '', data = {}) => {
 	try {
 		console.log("Processing response");
 		const newData = await response.json();
-		console.log("Got response");
+		// console.log("Got response");
 		console.log(newData);
 	    return newData;
 	}catch(error) {
