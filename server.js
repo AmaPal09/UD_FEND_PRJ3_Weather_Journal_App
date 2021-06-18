@@ -7,6 +7,8 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+require('dotenv').config();
+
 // Start and instance of the app
 const app = express();
 
@@ -50,6 +52,7 @@ const projectData = {
 
 let data = {};
 
+console.log(process.env);
 /*GET Method
 These routing methods specify a callback function (sometimes called
 “handler functions”) called when the application receives a request

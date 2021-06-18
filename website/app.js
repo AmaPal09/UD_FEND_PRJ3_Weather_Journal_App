@@ -23,5 +23,7 @@ const postData = async (url = '', data = {}) => {
 
 
 // POST request sent to the server
+require('dotenv').config();
+console.log(process.env.API_KEY);
 postData('/addRating', {temparature: 22, date: '10/10/2021',
 						userResponse: 'happy'});
