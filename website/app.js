@@ -2,6 +2,8 @@
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?zip=94041';
 const WEATHER_API_KEY = '&appid=3da249315989972b747443d739018cd3';
 
+
+
 const postData = async (url = '', data = {}) => {
 	console.log(data);
 	const response = await fetch( url, {
@@ -27,11 +29,12 @@ const postData = async (url = '', data = {}) => {
 
 
 // POST request sent to the server
-postData('/addRating', {temparature: 22, date: '10/10/2021',
-						userResponse: 'happy'});
+// postData('/addRating', {temparature: 22, date: '10/10/2021',
+// 						userResponse: 'happy'});
 
 const getWeatherData = async () => {
 	const url = BASE_WEATHER_URL + WEATHER_API_KEY;
+	const presentData = new Date();
 	console.log(url);
 
 	const response = await fetch(url);
@@ -46,6 +49,7 @@ const getWeatherData = async () => {
 		newData.maxTemp = weatherData.main.temp_max;
 		newData.minTemp = weatherData.main.temp_min;
 		newData.description = weatherData.weather[0].description;
+		newData.currDate = presentData.toDateString();
 		return newData;
 	}
 	catch(error) {

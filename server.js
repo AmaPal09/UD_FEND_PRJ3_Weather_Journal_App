@@ -84,6 +84,7 @@ app.post('/addRating', (req, res) => {
 	data.maxTemp = req.body.maxTemp;
 	data.minTemp = req.body.minTemp;
 	data.description = req.body.description;
+	data.currDate = req.body.currDate
 	projectData.latestRecord = data;
 	console.log(data);
 	res.send(projectData);
