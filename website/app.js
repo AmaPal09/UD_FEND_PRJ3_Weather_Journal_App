@@ -1,3 +1,7 @@
+//Global variables
+const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?zip=94041';
+const WEATHER_API_KEY = '&appid=3da249315989972b747443d739018cd3';
+
 const postData = async (url = '', data = {}) => {
 	console.log(data);
 	const response = await fetch( url, {
@@ -27,22 +31,34 @@ postData('/addRating', {temparature: 22, date: '10/10/2021',
 						userResponse: 'happy'});
 
 const getWeatherData = async () => {
-	const url =
-	'api.openweathermap.org/data/2.5/weather?zip=94041&appid=3da249315989972b747443d739018cd3';
+	const url = BASE_WEATHER_URL + WEATHER_API_KEY;
+	console.log(url);
 
 	const response = await fetch(url);
 	try {
 		console.log("Processing fetch response");
-		console.log(response);
 		const weatherData = await response.json();
-		// const weatherData = await JSON.parse(response);
-		// const weatherData = await res.text();
 		console.log(weatherData);
-		return weatherData;
+		const newData = {};
+		newData.cityName = weatherData.name;
+		newData.currTemp = weatherData.main.temp;
+		newData.currTempFeelsLike = weatherData.main.feels_like;
+		newData.maxTemp = weatherData.main.temp_max;
+		newData.minTemp = weatherData.main.temp_min;
+		newData.description = weatherData.weather[0].description;
+		return newData;
 	}
 	catch(error) {
 		console.log("error", error);
 	}
 }
 
-getWeatherData();
+const printWeatherData = async () => {
+	getWeatherData()
+	.then((data) => {
+		console.log(data);
+		postData('/addRating', data);
+	});
+}
+
+printWeatherData();

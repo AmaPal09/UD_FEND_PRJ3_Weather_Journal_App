@@ -78,15 +78,15 @@ app.get('/getData', getData);
 Post data from user to server
 */
 app.post('/addRating', (req, res) => {
-	// console.log(req.body);
-	// data.push(req.body);
-	data.temp = req.body.temparature;
-	data.date = req.body.date;
-	data.userRes = req.body.userResponse;
+	data.cityName = req.body.cityName;
+	data.currTemp = req.body.currTemp;
+	data.currTempFeelsLike = req.body.currTempFeelsLike;
+	data.maxTemp = req.body.maxTemp;
+	data.minTemp = req.body.minTemp;
+	data.description = req.body.description;
 	projectData.latestRecord = data;
 	console.log(data);
 	res.send(projectData);
-	// res.send("Recevied");
 });
 
 // Keep the server running and listen for activity
