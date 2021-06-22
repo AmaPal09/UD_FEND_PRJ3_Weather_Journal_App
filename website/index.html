@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
-	<title>Weather journal app</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css">
+	<title>Weather Journal App</title>
 </head>
 <body>
+	<div class="main__page">
+		<h1 class="page__title">Weather Journal App</h1>
 
-	<h1 class="page__title">Weather Journal App</h1>
+		<div class="weather__journal">
 
-	<div class="weather__journal">
+			<div class="weather__form">
+				<form class="journal__entry__form">
+					<label for="zip">Your zip code</label>
+					<textarea id="zip" rows="1" cols="20" placeholder="XXXXX"></textarea>
+					<label for="feeling">Your feelings today</label>
+					<textarea id="feeling" rows="3" cols="50"
+						placeholder="How are you feeling today?"></textarea>
+				</form>
+				<button id="generate" type="submit">Add Log Entry</button>
+			</div>
 
-		<div class="weather__form">
-			<form class="journal__entry__form">
-				<label for="zip">Your zip code</label>
-				<textarea id="zip" rows="1" cols="20" placeholder="XXXXX"></textarea>
-				<label for="feeling">Your feelings today</label>
-				<textarea id="feeling" rows="3" cols="50"
-					placeholder="How are you feeling today?"></textarea>
-			</form>
-			<button id="generate" type="submit">Add Log Entry</button>
-		</div>
-
-		<div class="weather__log">
-			<h2>Recent Entry</h2>
-			<p id="log__date"><span>On:</span></p>
-			<p id="log__curr__temp"><span>When the temp was </span></p>
-			<p id="log__weather__description"><span>And the weather was </span></p>
-			<p id="log__city__name"><span>In the city of: </span></p>
-			<p id="log__feeling"><span>I felt: </span></p>
+			<div class="weather__log">
+				<h2>Recent Entry</h2>
+				<p id="log__date"><span>On:</span></p>
+				<p id="log__curr__temp"><span>When the temp was </span></p>
+				<p id="log__weather__description"><span>And the weather was </span></p>
+				<p id="log__city__name"><span>In the city of: </span></p>
+				<p id="log__feeling"><span>I felt: </span></p>
+			</div>
 		</div>
 	</div>
 

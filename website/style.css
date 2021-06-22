@@ -1,10 +1,23 @@
 /*Style for weather journal app*/
-*{
+* {
 	padding: 0;
 	margin: 0;
+	justify-content: flex-start;
+	font-size: 18px;
+	padding: 2rem, 1rem;
+}
+
+.main__page {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	font-size: 18px;
 }
+
+.journal__entry__form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
