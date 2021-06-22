@@ -1,5 +1,6 @@
 //Global variables
-const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?zip=94041';
+// const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?zip=94041';
+const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
 const WEATHER_API_KEY = '&appid=3da249315989972b747443d739018cd3';
 
 /*
@@ -35,7 +36,8 @@ const postData = async (url = '', data = {}) => {
 
 
 const getWeatherData = async () => {
-	const url = BASE_WEATHER_URL + WEATHER_API_KEY;
+	// const url = BASE_WEATHER_URL + WEATHER_API_KEY;
+	const url = BASE_WEATHER_URL+ zip.value + WEATHER_API_KEY;
 	const presentData = new Date();
 	console.log(url);
 
@@ -67,4 +69,11 @@ const printWeatherData = async () => {
 	});
 }
 
-printWeatherData();
+// printWeatherData();
+
+function submitForm(e) {
+	e.preventDefault();
+	printWeatherData();
+}
+
+generateBtn.addEventListener('click', submitForm);
