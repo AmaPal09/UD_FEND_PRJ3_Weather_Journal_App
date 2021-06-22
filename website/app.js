@@ -72,12 +72,32 @@ const displayWeatherData = async () => {
 	try {
 		console.log("Processing getData");
 		const recentEntry = await response.json();
-		console.log(recentEntry);
+		console.log(recentEntry.latestRecord);
 		return recentEntry;
 	}
 	catch(error) {
 		console.log("error", error);
 	}
+}
+
+//Display to the user
+const displayToUser = async (recentEntry) => {
+	console.log("In displayToUser");
+	console.log(recentEntry);
+	const logDate =  document.getElementById('log__date');
+	logDate.innerText = await logDate.innerText + ' ' + recentEntry.latestRecord.currDate;
+
+	const logCurrTemp = document.getElementById('log__curr__temp');
+	logCurrTemp.innerText = logCurrTemp.innerText + ' ' + recentEntry.latestRecord.currTemp;
+
+	const logWeatherDesc = document.getElementById('log__weather__description');
+	logWeatherDesc.innerText = logWeatherDesc.innerText + ' ' + recentEntry.latestRecord.description;
+
+	const logCityName = document.getElementById('log__city__name');
+	logCityName.innerText = logCityName.innerText + ' ' + recentEntry.latestRecord.cityName;
+
+	const logFeelings = document.getElementById('log__feeling');
+	logFeelings.innerText = logFeelings.innerText + ' ' + recentEntry.latestRecord.feelings;
 }
 
 
@@ -87,7 +107,8 @@ const printWeatherData = async () => {
 		console.log(data);
 		postData('/addRating', data);
 	})
-	.then( () => displayWeatherData() );
+	.then( () => displayWeatherData() )
+	.then((recentEntry) => displayToUser(recentEntry));
 }
 
 // printWeatherData();
