@@ -9,7 +9,7 @@ const WEATHER_API_KEY = '&appid=3da249315989972b747443d739018cd3';
 */
 const zip = document.getElementById('zip');
 const feelings = document.getElementById('feeling');
-const generateBtn = document.getElementById('log');
+const generateBtn = document.getElementById('generate');
 
 const postData = async (url = '', data = {}) => {
 	console.log(data);
