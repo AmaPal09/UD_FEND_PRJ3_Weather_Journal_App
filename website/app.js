@@ -65,12 +65,29 @@ const getWeatherData = async () => {
 	}
 }
 
+
+// Display weather data to user
+const displayWeatherData = async () => {
+	const response = await fetch('/getData');
+	try {
+		console.log("Processing getData");
+		const recentEntry = await response.json();
+		console.log(recentEntry);
+		return recentEntry;
+	}
+	catch(error) {
+		console.log("error", error);
+	}
+}
+
+
 const printWeatherData = async () => {
 	getWeatherData()
 	.then((data) => {
 		console.log(data);
 		postData('/addRating', data);
-	});
+	})
+	.then( () => displayWeatherData() );
 }
 
 // printWeatherData();
