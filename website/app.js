@@ -2,7 +2,13 @@
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?zip=94041';
 const WEATHER_API_KEY = '&appid=3da249315989972b747443d739018cd3';
 
-
+/*
+* VARS FOR USER INPUT
+*
+*/
+const zip = document.getElementById('zip');
+const feelings = document.getElementById('feeling');
+const generateBtn = document.getElementById('log');
 
 const postData = async (url = '', data = {}) => {
 	console.log(data);
