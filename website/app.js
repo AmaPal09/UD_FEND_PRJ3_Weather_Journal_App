@@ -28,10 +28,6 @@ const postData = async (url = '', data = {}) => {
 }
 
 
-// POST request sent to the server
-// postData('/addRating', {temparature: 22, date: '10/10/2021',
-// 						userResponse: 'happy'});
-
 const getWeatherData = async () => {
 	const url = BASE_WEATHER_URL + WEATHER_API_KEY;
 	const presentData = new Date();
