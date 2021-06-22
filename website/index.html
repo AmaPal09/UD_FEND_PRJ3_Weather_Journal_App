@@ -4,16 +4,27 @@
 	<title>Weather journal app</title>
 </head>
 <body>
-	<div class="main__form">
+	<div class="weather__card">
 
-		<form>
-			<label for="zip">Your zip code</label>
-			<textarea id="zip" rows="1" cols="20" placeholder="XXXXX"></textarea>
-			<label for="feeling">Your feelings today</label>
-			<textarea id="feeling" rows="3" cols="50"
-				placeholder="How are you feeling today?"></textarea>
-		</form>
-		<button id="log" type="submit">Generate</button>
+		<div class="weather__card__form">
+			<form>
+				<label for="zip">Your zip code</label>
+				<textarea id="zip" rows="1" cols="20" placeholder="XXXXX"></textarea>
+				<label for="feeling">Your feelings today</label>
+				<textarea id="feeling" rows="3" cols="50"
+					placeholder="How are you feeling today?"></textarea>
+			</form>
+			<button id="log" type="submit">Generate</button>
+		</div>
+
+		<div class="weather__card__log">
+			<h2>Recent Entry</h2>
+			<p id="log__date"><span>On:</span></p>
+			<p id="log__curr__temp"><span>When the temp was </span></p>
+			<p id="log__weather__description"><span>And the weather was </span></p>
+			<p id="log__city__name"><span>In the city of: </span></p>
+			<p id="log__feeling"><span>I felt: </span></p>
+		</div>
 	</div>
 
 	<p id="response"></p>
