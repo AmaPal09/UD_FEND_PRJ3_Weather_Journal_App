@@ -54,6 +54,7 @@ const getWeatherData = async () => {
 		newData.minTemp = weatherData.main.temp_min;
 		newData.description = weatherData.weather[0].description;
 		newData.currDate = presentData.toDateString();
+		newData.feelings = feelings.value;
 		return newData;
 	}
 	catch(error) {
