@@ -1,15 +1,7 @@
 /*Style for weather journal app*/
 @import url('css/var4main.css');
 
-* {
-	padding: 0;
-	margin: 0;
-	justify-content: flex-start;
-	font-size: 18px;
-	padding: 2rem, 1rem;
-	line-height: 1.5;
-	letter-spacing: 0.02rem;
-}
+
 
 .main__page {
 	display: flex;
@@ -26,3 +18,20 @@
 	justify-content: space-around;
 }
 
+h1 {
+	font-size: var(--page-title-size);
+	font-family: var(--page-title-family);
+	font-weight: var(--page-title-weight);
+}
+
+h2 {
+	font-size: var(--regular-title-size);
+	font-family: var(--regular-title-family);
+	font-weight: var(--regular-title-weight);
+}
+
+p {
+	font-size: var(--regular-text-size);
+	font-family: var(--regular-text-family);
+	font-weight: var(--regular-text-weight);
+}
