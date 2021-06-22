@@ -37,6 +37,9 @@ const postData = async (url = '', data = {}) => {
 
 const getWeatherData = async () => {
 	// const url = BASE_WEATHER_URL + WEATHER_API_KEY;
+// TODO: Remove hardcoded value for zip & feelings
+	zip.value = '94041';
+	feelings.value = 'Great!'
 	const url = BASE_WEATHER_URL+ zip.value + WEATHER_API_KEY;
 	const presentData = new Date();
 	console.log(url);
