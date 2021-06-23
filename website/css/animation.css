@@ -19,84 +19,85 @@
 .bubble--animation div:nth-of-type(1) {
 	width: 15px;
 	height: 15px;
-	background-color: rgb(242,252,254,0.4);
+	background-color: rgb(242,252,254,0.25);
 	/*Animation shorthand
 	animation: name duration timing-funciton delay infinte*/
 	animation: fall-diagonally 20s linear -2s infinite;
 }
 
+.bubble--animation div:nth-of-type(3) {
+	width: 25px;
+	height: 25px;
+	background-color: rgb(242,252,254, 0.3);
+	animation: fall-diagonally 30s ease-out 6s infinite;
+}
+
 .bubble--animation div:nth-of-type(2) {
 	width: 5px;
 	height: 5px;
-	background-color: rgb(242,252,254, 0.4);
-	animation: fall-increase-diagonally 30s ease-in -2s infinite;
-}
-
-.bubble--animation div:nth-of-type(3) {
-	width: 20px;
-	height: 20px;
-	background-color: rgb(242,252,254, 0.25);
-	animation: fall-diagonally 25s ease-out 6s infinite;
+	background-color: rgb(242,252,254, 0.2);
+	animation: fall-increase-diagonally 25s ease-in -5s infinite;
 }
 
 .bubble--animation div:nth-of-type(4) {
-	width: 10px;
-	height: 10px;
-	background-color: rgb(242,252,254, 0.2);
-	animation: fall-increase-diagonally 25s linear 10s infinite;
+	width: 2px;
+	height: 2px;
+	background-color: rgb(242,252,254, 0.3);
+	animation: fall-increase-diagonally 15s linear 10s infinite;
 }
 
 .bubble--animation div:nth-of-type(5) {
 	width: 30px;
 	height: 30px;
 	background-color: rgb(242,252,254, 0.1);
-	animation: fall-bigger-diagonally 25s ease-in-out -3s infinite;
+	animation: fall-bigger-diagonally 30s ease-in -3s infinite;
+}
+
+.bubble--animation div:nth-of-type(8) {
+	width: 25px;
+	height: 25px;
+	background-color: rgb(242,252,254, 0.25);
+	animation: fall-bigger-diagonally 45s ease 2s infinite;
 }
 
 .bubble--animation div:nth-of-type(6) {
-	width: 30px;
-	height: 30px;
+	width: 15px;
+	height: 15px;
 	background-color: rgb(242,252,254, 0.3);
-	animation: fall-diagonally-halfway 35s linear 5s infinite;
+	animation: fall-diagonally-halfway 35s linear 3s infinite;
 }
 
 .bubble--animation div:nth-of-type(7) {
 	width: 30px;
 	height: 30px;
-	background-color: rgb(242,252,254, 0.2);
-	animation: fall-diagonally-halfway 20s ease-in 1s infinite;
+	background-color: rgb(242,252,254, 0.25);
+	animation: fall-diagonally-halfway 20s ease-in 8s infinite;
 }
 
-.bubble--animation div:nth-of-type(8) {
-	width: 30px;
-	height: 30px;
-	background-color: rgb(242,252,254, 0.1);
-	animation: fall-bigger-diagonally 35s ease-in-out 2s infinite;
-}
 
 .bubble--animation div:nth-of-type(9) {
 	width: 30px;
 	height: 30px;
-	background-color: rgb(242,252,254, 0.1);
-	animation: fall-diagonally-lower 35s ease-in-out 2s infinite;
+	background-color: rgb(242,252,254, 0.2);
+	animation: fall-diagonally-lower 15s ease-in-out 2s infinite;
 }
 
 .bubble--animation div:nth-of-type(10) {
 	width: 30px;
 	height: 30px;
-	background-color: rgb(242,252,254, 0.1);
-	animation: fall-diagonally-upper 35s ease-in-out 2s infinite;
+	background-color: rgb(242,252,254, 0.15);
+	animation: fall-diagonally-upper 25s ease-in-out 2s infinite;
 }
 
 /*Animation rules*/
 @keyframes fall-diagonally {
 	0%{
-        left: -10px;
-        top: -10px;
+        left: -20px;
+        top: -20px;
     }
     100%{
-    	left: 65vw;
-    	top: 60vh;
+    	left: 75vw;
+    	top: 70vh;
     }
 }
 
@@ -106,8 +107,8 @@
         top: -10px;
     }
     100%{
-    	left: 65vw;
-    	top: 60vh;
+    	left: 70vw;
+    	top: 55vh;
     	width: 40px;
     	height: 40px
     }
@@ -115,12 +116,12 @@
 
 @keyframes fall-bigger-diagonally {
 	0%{
-        left: 10px;
-        top: 10px;
+        left: 15px;
+        top: 15px;
     }
     100%{
-    	left: 55vw;
-    	top: 40vh;
+    	left: 70vw;
+    	top: 60vh;
     	width: 100px;
     	height: 100px
     }
@@ -132,8 +133,8 @@
         top: -5px;
     }
     100%{
-    	left: 50vw;
-    	top: 50vh;
+    	left: 60vw;
+    	top: 60vh;
     	width: 60px;
     	height: 60px
     }
@@ -147,8 +148,8 @@
     100%{
     	left: 55vw;
     	top: 70vh;
-    	width: 60px;
-    	height: 60px
+    	width: 65px;
+    	height: 65px
     }
 }
 
@@ -160,7 +161,7 @@
     100%{
     	left: 65vw;
     	top: 40vh;
-    	width: 60px;
-    	height: 60px
+    	width: 70px;
+    	height: 70px
     }
 }
