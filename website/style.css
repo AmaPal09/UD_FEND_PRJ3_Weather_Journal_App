@@ -4,9 +4,12 @@
 
 html {
 	height: 100%;
-	background: #abdaf4;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(135deg, #cee9f8, #abdaf4, #77c3ed, #54b3e9, #43abe6, #229cdf, #1979ad);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(135deg, #cee9f8, #abdaf4, #77c3ed, #54b3e9, #43abe6, #229cdf, #1979ad); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	/*background: #abdaf4;   fallback for old browsers */
+	background: #328cb4;  /* fallback for old browsers */
+	/*background: -webkit-linear-gradient(135deg, #cee9f8, #abdaf4 2%, #77c3ed, #54b3e9, #43abe6, #229cdf, #1979ad);  /* Chrome 10-25, Safari 5.1-6 */
+	/*background: linear-gradient(135deg, #cee9f8, #abdaf4 2%, #77c3ed, #54b3e9, #43abe6, #229cdf, #1979ad); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to bottom right, #61b0d3, #328cb4);
+	background: linear-gradient(to bottom right, #61b0d3, #328cb4);
 }
 
 .main__page {
@@ -20,24 +23,57 @@ html {
 .journal__entry__form {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: left;
 	justify-content: space-around;
+	padding: 1rem;
 }
 
-h1 {
+.page__title {
 	font-size: var(--page-title-size);
 	font-family: var(--page-title-family);
 	font-weight: var(--page-title-weight);
+	color: var(--page-title-color);
+	padding: 2rem 2rem 0 2rem;
+    margin: 0 1rem 1rem 1rem;
 }
 
-h2 {
+.div__title {
 	font-size: var(--regular-title-size);
 	font-family: var(--regular-title-family);
 	font-weight: var(--regular-title-weight);
+	color: var(--regular-title-color);
+	padding: 0 0 0 1rem;
 }
 
 p {
 	font-size: var(--regular-text-size);
 	font-family: var(--regular-text-family);
 	font-weight: var(--regular-text-weight);
+	padding: 0 0 0 1rem;
+}
+
+label {
+	font-size: var(--regular-text-size);
+	font-family: var(--regular-text-family);
+	font-weight: var(--regular-text-weight);
+	padding: 0.2rem 0;
+}
+
+.user__input {
+	font-family: var(--regular-title-family);
+	font-weight: var(--regular-text-weight);
+	font-size: var(--regular-text-size);
+	color: var(--special-text-color);
+	padding: 0.5rem;
+	margin: 0 0 0.2rem 0;
+}
+
+.btn {
+    color: var(--special-text-color);
+    background-color: var(--special-color);
+    padding: 0.3rem;
+    margin: 0 0 1rem 1rem;
+    border: none;
+    border-radius: 5%;
+
 }
