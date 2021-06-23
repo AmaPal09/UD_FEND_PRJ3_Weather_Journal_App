@@ -43,13 +43,13 @@ html {
 	font-weight: var(--regular-title-weight);
 	color: var(--regular-title-color);
 	padding: 0 0 0 1rem;
+	margin: 1rem 0 0 0;
 }
 
 p {
 	font-size: var(--regular-text-size);
 	font-family: var(--regular-text-family);
 	font-weight: var(--regular-text-weight);
-	padding: 0 0 0 1rem;
 }
 
 label {
@@ -93,4 +93,9 @@ label {
 
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: var(--special-text-color);
+}
+
+.weather__card {
+	margin: 1rem;
+	/*box-shadow: 0.3rem 0.3rem 5rem 0.2rem var(--special-background-color);*/
 }
