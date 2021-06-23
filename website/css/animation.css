@@ -1,0 +1,209 @@
+.bubble--animation {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+/*DIVS that will be animated*/
+.bubble--animation div {
+	position: absolute;
+	display: block;
+	content: '';
+	border-radius: 50%;
+	z-index: -1;
+}
+
+/*Animation Details*/
+.bubble--animation div:nth-of-type(1) {
+	width: 15px;
+	height: 15px;
+	background-color: rgb(242,252,254,0.4);
+	animation-name: fall-diagonally;
+	animation-duration: 20s;
+	animation-delay: -2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+
+}
+
+.bubble--animation div:nth-of-type(2) {
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: rgb(242,252,254, 0.4);
+	animation-name: fall-increase-diagonally;
+	animation-duration: 30s;
+	animation-delay: -2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in;
+
+}
+
+.bubble--animation div:nth-of-type(3) {
+	width: 20px;
+	height: 20px;
+	background-color: rgb(242,252,254, 0.25);
+	animation-name: fall-diagonally;
+	animation-duration: 25s;
+	animation-delay: 6s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+
+}
+
+.bubble--animation div:nth-of-type(4) {
+	width: 10px;
+	height: 10px;
+	background-color: rgb(242,252,254, 0.2);
+	animation-name: fall-increase-diagonally;
+	animation-duration: 25s;
+	animation-delay: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+
+}
+
+.bubble--animation div:nth-of-type(5) {
+	width: 30px;
+	height: 30px;
+	background-color: rgb(242,252,254, 0.1);
+	animation-name: fall-bigger-diagonally;
+	animation-duration: 25s;
+	animation-delay: -3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+.bubble--animation div:nth-of-type(6) {
+	width: 30px;
+	height: 30px;
+	background-color: rgb(242,252,254, 0.3);
+	animation-name: fall-diagonally-halfway;
+	animation-duration: 35s;
+	animation-delay: 5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.bubble--animation div:nth-of-type(7) {
+	width: 30px;
+	height: 30px;
+	background-color: rgb(242,252,254, 0.2);
+	animation-name: fall-diagonally-halfway;
+	animation-duration: 20s;
+	animation-delay: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in;
+}
+
+.bubble--animation div:nth-of-type(8) {
+	width: 30px;
+	height: 30px;
+	background-color: rgb(242,252,254, 0.1);
+	animation-name: fall-bigger-diagonally;
+	animation-duration: 35s;
+	animation-delay: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+.bubble--animation div:nth-of-type(9) {
+	width: 30px;
+	height: 30px;
+	background-color: rgb(242,252,254, 0.1);
+	animation-name: fall-diagonally-lower;
+	animation-duration: 35s;
+	animation-delay: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+.bubble--animation div:nth-of-type(10) {
+	width: 30px;
+	height: 30px;
+	background-color: rgb(242,252,254, 0.1);
+	animation-name: fall-diagonally-upper;
+	animation-duration: 35s;
+	animation-delay: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+/*Animation rules*/
+@keyframes fall-diagonally {
+	0%{
+        left: -10px;
+        top: -10px;
+    }
+    100%{
+    	left: 65vw;
+    	top: 60vh;
+    }
+}
+
+@keyframes fall-increase-diagonally {
+	0%{
+        left: -10px;
+        top: -10px;
+    }
+    100%{
+    	left: 65vw;
+    	top: 60vh;
+    	width: 40px;
+    	height: 40px
+    }
+}
+
+@keyframes fall-bigger-diagonally {
+	0%{
+        left: 10px;
+        top: 10px;
+    }
+    100%{
+    	left: 55vw;
+    	top: 40vh;
+    	width: 100px;
+    	height: 100px
+    }
+}
+
+@keyframes fall-diagonally-halfway {
+	0%{
+        left: 2vw;
+        top: -5px;
+    }
+    100%{
+    	left: 50vw;
+    	top: 50vh;
+    	width: 60px;
+    	height: 60px
+    }
+}
+
+@keyframes fall-diagonally-lower {
+	0%{
+        left: 1vw;
+        top: -5px;
+    }
+    100%{
+    	left: 55vw;
+    	top: 70vh;
+    	width: 60px;
+    	height: 60px
+    }
+}
+
+@keyframes fall-diagonally-upper {
+	0%{
+        left: -5px;
+        top: -5px;
+    }
+    100%{
+    	left: 65vw;
+    	top: 40vh;
+    	width: 60px;
+    	height: 60px
+    }
+}
