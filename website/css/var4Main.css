@@ -28,10 +28,12 @@
 	--regular-title-weight: 700;
 	--regular-text-weight: 500;
 
-
+	/*colors*/
 	--page-title-color: #f4f312;
 	--regular-title-color: #f4f312;
 	--regular-text-color: #fffeff;
+	--special-text-color: black;
+	--special-color: white;
 
 };
 
