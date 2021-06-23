@@ -19,9 +19,9 @@
 	--regular-text-size: 1rem;
 
 	/*font-family*/
-	--page-title-family: 'Lora', serif;
-	--regular-title-family: 'Lora', serif;
-	--regular-text-family: 'Roboto', Sans-serif;
+	--page-title-family: 'Roboto', Sans-serif;
+	--regular-title-family: 'Roboto', Sans-serif;
+	--regular-text-family: 'Lora', serif;
 
 	/*font-weight*/
 	--page-title-weight: 700;
@@ -29,7 +29,10 @@
 	--regular-text-weight: 400;
 
 
-	--regular-text-color: white;
+	--page-title-color: #f4f312;
+	--regular-title-color: #f4f312;
+	--regular-text-color: #fffeff;
+
 };
 
 
