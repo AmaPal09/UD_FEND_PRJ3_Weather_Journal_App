@@ -65,15 +65,32 @@ label {
 	font-size: var(--regular-text-size);
 	color: var(--special-text-color);
 	padding: 0.5rem;
-	margin: 0 0 0.2rem 0;
+	margin: 0 0 0.5rem 0;
 }
 
 .btn {
+    font-family: var(--regular-title-family);
+	font-weight: var(--regular-text-weight);
+	font-size: var(--regular-text-size);
     color: var(--special-text-color);
-    background-color: var(--special-color);
+    background-color: var(--special-background-color);
     padding: 0.3rem;
     margin: 0 0 1rem 1rem;
     border: none;
     border-radius: 5%;
+    box-shadow: 0.4rem 0.4rem;
+}
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  /*color: var(--special-text-color);*/
+  color: var(--special-text-color);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--special-text-color);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--special-text-color);
 }
