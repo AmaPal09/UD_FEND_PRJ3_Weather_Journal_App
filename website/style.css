@@ -1,7 +1,12 @@
 /*Style for weather journal app*/
 @import url('css/var4main.css');
 
-
+html {
+	height: 100%;
+	background: #abdaf4;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(135deg, #cee9f8, #abdaf4, #77c3ed, #54b3e9, #43abe6, #229cdf, #1979ad);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(135deg, #cee9f8, #abdaf4, #77c3ed, #54b3e9, #43abe6, #229cdf, #1979ad); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 .main__page {
 	display: flex;
