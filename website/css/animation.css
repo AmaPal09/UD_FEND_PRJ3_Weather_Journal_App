@@ -20,115 +20,72 @@
 	width: 15px;
 	height: 15px;
 	background-color: rgb(242,252,254,0.4);
-	animation-name: fall-diagonally;
-	animation-duration: 20s;
-	animation-delay: -2s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-
+	/*Animation shorthand
+	animation: name duration timing-funciton delay infinte*/
+	animation: fall-diagonally 20s linear -2s infinite;
 }
 
 .bubble--animation div:nth-of-type(2) {
 	width: 5px;
 	height: 5px;
-	border-radius: 50%;
 	background-color: rgb(242,252,254, 0.4);
-	animation-name: fall-increase-diagonally;
-	animation-duration: 30s;
-	animation-delay: -2s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in;
-
+	animation: fall-increase-diagonally 30s ease-in -2s infinite;
 }
 
 .bubble--animation div:nth-of-type(3) {
 	width: 20px;
 	height: 20px;
 	background-color: rgb(242,252,254, 0.25);
-	animation-name: fall-diagonally;
-	animation-duration: 25s;
-	animation-delay: 6s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-out;
-
+	animation: fall-diagonally 25s ease-out 6s infinite;
 }
 
 .bubble--animation div:nth-of-type(4) {
 	width: 10px;
 	height: 10px;
 	background-color: rgb(242,252,254, 0.2);
-	animation-name: fall-increase-diagonally;
-	animation-duration: 25s;
-	animation-delay: 10s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-
+	animation: fall-increase-diagonally 25s linear 10s infinite;
 }
 
 .bubble--animation div:nth-of-type(5) {
 	width: 30px;
 	height: 30px;
 	background-color: rgb(242,252,254, 0.1);
-	animation-name: fall-bigger-diagonally;
-	animation-duration: 25s;
-	animation-delay: -3s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
+	animation: fall-bigger-diagonally 25s ease-in-out -3s infinite;
 }
 
 .bubble--animation div:nth-of-type(6) {
 	width: 30px;
 	height: 30px;
 	background-color: rgb(242,252,254, 0.3);
-	animation-name: fall-diagonally-halfway;
-	animation-duration: 35s;
-	animation-delay: 5s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+	animation: fall-diagonally-halfway 35s linear 5s infinite;
 }
 
 .bubble--animation div:nth-of-type(7) {
 	width: 30px;
 	height: 30px;
 	background-color: rgb(242,252,254, 0.2);
-	animation-name: fall-diagonally-halfway;
-	animation-duration: 20s;
-	animation-delay: 1s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in;
+	animation: fall-diagonally-halfway 20s ease-in 1s infinite;
 }
 
 .bubble--animation div:nth-of-type(8) {
 	width: 30px;
 	height: 30px;
 	background-color: rgb(242,252,254, 0.1);
-	animation-name: fall-bigger-diagonally;
-	animation-duration: 35s;
-	animation-delay: 2s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
+	animation: fall-bigger-diagonally 35s ease-in-out 2s infinite;
 }
 
 .bubble--animation div:nth-of-type(9) {
 	width: 30px;
 	height: 30px;
 	background-color: rgb(242,252,254, 0.1);
-	animation-name: fall-diagonally-lower;
-	animation-duration: 35s;
-	animation-delay: 2s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
+	animation: fall-diagonally-lower 35s ease-in-out 2s infinite;
 }
 
 .bubble--animation div:nth-of-type(10) {
 	width: 30px;
 	height: 30px;
 	background-color: rgb(242,252,254, 0.1);
-	animation-name: fall-diagonally-upper;
-	animation-duration: 35s;
-	animation-delay: 2s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
+	animation: fall-diagonally-upper 35s ease-in-out 2s infinite;
 }
 
 /*Animation rules*/
