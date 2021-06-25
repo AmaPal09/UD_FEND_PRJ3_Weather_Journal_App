@@ -66,6 +66,9 @@ label {
 	color: var(--special-text-color);
 	padding: 0.5rem;
 	margin: 0 0 0.5rem 0;
+	background-color: var(--special-background-color);
+	border: none;
+	outline: none;
 }
 
 .btn {
@@ -85,6 +88,7 @@ label {
   /*color: var(--special-text-color);*/
   color: var(--special-text-color);
   opacity: 1; /* Firefox */
+  border: none;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
