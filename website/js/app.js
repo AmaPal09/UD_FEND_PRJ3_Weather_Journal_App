@@ -153,7 +153,22 @@ const printWeatherData = async () => {
 */
 function submitForm(e) {
 	e.preventDefault();
-	printWeatherData();
+	//Validate user input is blank
+	if (zip.value == "" || feelings.value == "") {
+		if (zip.value == "" && feelings.value == "") {
+			document.getElementById('weather__crd').innerText = "Please enter zip code and feelings";
+		}
+		else if (zip.value == "") {
+			document.getElementById('weather__crd').innerText = "Please enter zip code";
+		}
+		else if (feelings.value == "") {
+			document.getElementById('weather__crd').innerText = "Please enter feelings";
+		}
+	}
+	//Execute for valid user input
+	else {
+		printWeatherData();
+	}
 }
 
 
