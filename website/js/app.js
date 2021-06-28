@@ -10,7 +10,7 @@ const WEATHER_API_KEY = '&appid=3da249315989972b747443d739018cd3';
 const zip = document.getElementById('zip');
 const feelings = document.getElementById('feeling');
 const generateBtn = document.getElementById('generate');
-
+let catchData;
 
 /*
 * POSTDATA async function
@@ -21,25 +21,30 @@ const generateBtn = document.getElementById('generate');
 * @return {json} response: response from the server
 */
 const postData = async (url = '', data = {}) => {
-	console.log(data);
-	const response = await fetch( url, {
-		method: 'POST',
-		credentials: 'same-origin',
-		headers: {
-          'Content-Type': 'application/json',
-		},
-		// Body data type must match "Content-Type" header
-		body: JSON.stringify(data),
-	});
+	if (Object.keys(data).length == 0) {
+		console.log("undefined data");
+	}
+	else {
+		console.log(data);
+		const response = await fetch( url, {
+			method: 'POST',
+			credentials: 'same-origin',
+			headers: {
+	          'Content-Type': 'application/json',
+			},
+			// Body data type must match "Content-Type" header
+			body: JSON.stringify(data),
+		});
 
-	try {
-		console.log("Processing response");
-		const newData = await response.json();
-		// console.log("Got response");
-		console.log(newData);
-	    return newData;
-	}catch(error) {
-		console.log("error", error);
+		try {
+			console.log("Processing response");
+			const newData = await response.json();
+			// console.log("Got response");
+			console.log(newData);
+		    return newData;
+		}catch(error) {
+			console.log("error", error);
+		}
 	}
 }
 
@@ -53,8 +58,8 @@ const postData = async (url = '', data = {}) => {
 const getWeatherData = async () => {
 	// const url = BASE_WEATHER_URL + WEATHER_API_KEY;
 // TODO: Remove hardcoded value for zip & feelings
-	zip.value = '94041';
-	feelings.value = 'Great!'
+	// zip.value = '94041';
+	// feelings.value = 'Great!'
 	const url = BASE_WEATHER_URL+ zip.value + WEATHER_API_KEY;
 	const presentData = new Date();
 	console.log(url);
@@ -63,17 +68,22 @@ const getWeatherData = async () => {
 	try {
 		console.log("Processing fetch response");
 		const weatherData = await response.json();
-		console.log(weatherData);
-		const newData = {};
-		newData.cityName = weatherData.name;
-		newData.currTemp = weatherData.main.temp;
-		newData.currTempFeelsLike = weatherData.main.feels_like;
-		newData.maxTemp = weatherData.main.temp_max;
-		newData.minTemp = weatherData.main.temp_min;
-		newData.description = weatherData.weather[0].description;
-		newData.currDate = presentData.toDateString();
-		newData.feelings = feelings.value;
-		return newData;
+		if (weatherData.cod == '404' || weatherData.cod == '400') {
+			displayErrorMsg("Please enter valid US zip code. \nFor other countries, enter zipcode, country code eg: 411021,IN");
+		}
+		else {
+			console.log(weatherData);
+			const newData = {};
+			newData.cityName = weatherData.name;
+			newData.currTemp = weatherData.main.temp;
+			newData.currTempFeelsLike = weatherData.main.feels_like;
+			newData.maxTemp = weatherData.main.temp_max;
+			newData.minTemp = weatherData.main.temp_min;
+			newData.description = weatherData.weather[0].description;
+			newData.currDate = presentData.toDateString();
+			newData.feelings = feelings.value;
+			return newData;
+		}
 	}
 	catch(error) {
 		console.log("error", error);
@@ -111,20 +121,26 @@ const getRecentData = async () => {
 const displayToUser = async (recentEntry) => {
 	console.log("In displayToUser");
 	console.log(recentEntry);
-	const logDate =  document.getElementById('log__date');
-	logDate.innerText = await logDate.innerText + ' ' + recentEntry.latestRecord.currDate;
+	if (Object.keys(recentEntry).length !== 0) {
+		// displayErrorMsg("Log a valid entry to view recent entry");
+	// }
+	// else {
+		catchData = recentEntry;
+		const logDate =  document.getElementById('log__date');
+		logDate.innerText = await logDate.innerText + ' ' + recentEntry.latestRecord.currDate;
 
-	const logCurrTemp = document.getElementById('log__curr__temp');
-	logCurrTemp.innerText = logCurrTemp.innerText + ' ' + recentEntry.latestRecord.currTemp;
+		const logCurrTemp = document.getElementById('log__curr__temp');
+		logCurrTemp.innerText = logCurrTemp.innerText + ' ' + recentEntry.latestRecord.currTemp;
 
-	const logWeatherDesc = document.getElementById('log__weather__description');
-	logWeatherDesc.innerText = logWeatherDesc.innerText + ' ' + recentEntry.latestRecord.description;
+		const logWeatherDesc = document.getElementById('log__weather__description');
+		logWeatherDesc.innerText = logWeatherDesc.innerText + ' ' + recentEntry.latestRecord.description;
 
-	const logCityName = document.getElementById('log__city__name');
-	logCityName.innerText = logCityName.innerText + ' ' + recentEntry.latestRecord.cityName;
+		const logCityName = document.getElementById('log__city__name');
+		logCityName.innerText = logCityName.innerText + ' ' + recentEntry.latestRecord.cityName;
 
-	const logFeelings = document.getElementById('log__feeling');
-	logFeelings.innerText = logFeelings.innerText + ' ' + recentEntry.latestRecord.feelings;
+		const logFeelings = document.getElementById('log__feeling');
+		logFeelings.innerText = logFeelings.innerText + ' ' + recentEntry.latestRecord.feelings;
+	}
 }
 
 
@@ -156,13 +172,13 @@ function submitForm(e) {
 	//Validate if user input is blank
 	if (zip.value == "" || feelings.value == "") {
 		if (zip.value == "" && feelings.value == "") {
-			document.getElementById('weather__crd').innerText = "Please enter zip code and feelings";
+			displayErrorMsg("Please enter zip code and feelings");
 		}
 		else if (zip.value == "") {
-			document.getElementById('weather__crd').innerText = "Please enter zip code";
+			displayErrorMsg("Please enter zip code");
 		}
 		else if (feelings.value == "") {
-			document.getElementById('weather__crd').innerText = "Please enter feelings";
+			displayErrorMsg("Please enter feelings");
 		}
 	}
 	//Execute for valid user input
@@ -171,6 +187,9 @@ function submitForm(e) {
 	}
 }
 
+function displayErrorMsg(msg) {
+	document.getElementById('error__msg').innerText = msg;
+}
 
 /*
 * EVENT LISTENERS
