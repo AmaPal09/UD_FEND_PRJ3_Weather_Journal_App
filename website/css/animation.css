@@ -23,49 +23,49 @@
 	background-color: rgb(242,252,254,0.27);
 	/*Animation shorthand
 	animation: name duration timing-funciton delay infinte*/
-	animation: fall-diagonally 20s linear -2s infinite;
+	animation: fall-diagonally 20s linear -16s infinite;
 }
 
 .bubble--animation div:nth-of-type(2) {
 	width: 25px;
 	height: 25px;
 	background-color: rgb(242,252,254, 0.12);
-	animation: fall-diagonally 30s ease-out 6s infinite;
+	animation: fall-diagonally 30s ease-out -4s infinite;
 }
 
 .bubble--animation div:nth-of-type(3) {
 	width: 5px;
 	height: 5px;
 	background-color: rgb(242,252,254, 0.18);
-	animation: fall-increase-diagonally 25s ease-in -5s infinite;
+	animation: fall-increase-diagonally 25s ease-in -22s infinite;
 }
 
 .bubble--animation div:nth-of-type(4) {
 	width: 2px;
 	height: 2px;
 	background-color: rgb(242,252,254, 0.27);
-	animation: fall-increase-diagonally 15s linear 10s infinite;
+	animation: fall-increase-diagonally 15s linear 5s infinite;
 }
 
 .bubble--animation div:nth-of-type(5) {
 	width: 30px;
 	height: 30px;
 	background-color: rgb(242,252,254, 0.12);
-	animation: fall-bigger-diagonally 30s ease-in -3s infinite;
+	animation: fall-bigger-diagonally 30s ease-in -27s infinite;
 }
 
 .bubble--animation div:nth-of-type(6) {
 	width: 25px;
 	height: 25px;
 	background-color: rgb(242,252,254, 0.20);
-	animation: fall-bigger-diagonally 60s linear 2s infinite;
+	animation: fall-bigger-diagonally 60s linear 10s infinite;
 }
 
 .bubble--animation div:nth-of-type(7) {
 	width: 15px;
 	height: 15px;
 	background-color: rgb(242,252,254, 0.25);
-	animation: fall-diagonally-halfway 35s linear -3s infinite;
+	animation: fall-diagonally-halfway 35s linear -30s infinite;
 }
 
 .bubble--animation div:nth-of-type(8) {
@@ -80,14 +80,14 @@
 	width: 30px;
 	height: 30px;
 	background-color: rgb(242,252,254, 0.18);
-	animation: fall-diagonally-lower 15s ease-in-out -2s infinite;
+	animation: fall-diagonally-lower 15s ease-in-out -13s infinite;
 }
 
 .bubble--animation div:nth-of-type(10) {
 	width: 30px;
 	height: 30px;
 	background-color: rgb(242,252,254, 0.25);
-	animation: fall-diagonally-upper 25s ease-in 2s infinite;
+	animation: fall-diagonally-upper 25s ease-in 3s infinite;
 }
 
 /*Animation rules*/
