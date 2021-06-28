@@ -153,7 +153,7 @@ const printWeatherData = async () => {
 */
 function submitForm(e) {
 	e.preventDefault();
-	//Validate user input is blank
+	//Validate if user input is blank
 	if (zip.value == "" || feelings.value == "") {
 		if (zip.value == "" && feelings.value == "") {
 			document.getElementById('weather__crd').innerText = "Please enter zip code and feelings";
