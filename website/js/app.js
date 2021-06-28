@@ -82,12 +82,12 @@ const getWeatherData = async () => {
 
 
 /*
-* RECENTWEATHERDATA async function
+* GETRECENTDATA async function
 * @description: Obtain recent weather data entry from the server by
 * 				making a get request to the server
 * @return {json} response: response from the server
 */
-const displayWeatherData = async () => {
+const getRecentData = async () => {
 	const response = await fetch('/getData');
 	try {
 		console.log("Processing getData");
@@ -141,7 +141,7 @@ const printWeatherData = async () => {
 		console.log(data);
 		postData('/addRating', data);
 	})
-	.then( () => displayWeatherData() )
+	.then( () => getRecentData() )
 	.then((recentEntry) => displayToUser(recentEntry));
 }
 
