@@ -4,12 +4,9 @@
 
 html {
 	height: 100%;
-	/*background: #abdaf4;   fallback for old browsers */
 	background: #328cb4;  /* fallback for old browsers */
-	/*background: -webkit-linear-gradient(135deg, #cee9f8, #abdaf4 2%, #77c3ed, #54b3e9, #43abe6, #229cdf, #1979ad);  /* Chrome 10-25, Safari 5.1-6 */
-	/*background: linear-gradient(135deg, #cee9f8, #abdaf4 2%, #77c3ed, #54b3e9, #43abe6, #229cdf, #1979ad); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	background: -webkit-linear-gradient(to bottom right, #61b0d3, #328cb4);
-	background: linear-gradient(to bottom right, #61b0d3, #328cb4);
+	background: -webkit-linear-gradient(to bottom right, #61b0d3, #328cb4); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom right, #61b0d3, #328cb4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .main__page {
@@ -120,7 +117,6 @@ label {
 
 .weather__card {
 	margin: 1rem;
-	/*box-getRecentData: 0.3rem 0.3rem 5rem 0.2rem var(--special-background-color);*/
 }
 
 .error {

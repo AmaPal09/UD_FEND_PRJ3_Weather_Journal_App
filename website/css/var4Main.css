@@ -1,3 +1,4 @@
+/*Get fonts from Google fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Roboto:wght@500;700&display=swap');
 
 
@@ -28,12 +29,12 @@
 	--regular-title-weight: 700;
 	--regular-text-weight: 500;
 
-	/*colors*/
+
+	/*COLOURS*/
 	--page-title-color: #f4f312;
 	--regular-title-color: #f4f312;
 	--regular-text-color: #fffeff;
 	--special-text-color: #07151a;
-	/*--special-background-color: #fbfdfe;*/
 	--special-background-color: #ebf5fa;
 	--shadow-color: #215d78;
 
