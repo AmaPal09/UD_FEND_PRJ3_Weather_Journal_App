@@ -125,11 +125,11 @@ const displayToUser = async (recentEntry) => {
 	console.log(recentEntry);
 	if (Object.keys(recentEntry).length !== 0) {
 		catchData = recentEntry;
-		document.getElementById('log__date').innerText = `On ${recentEntry.latestRecord.currDate},`;
-		document.getElementById('log__city__name').innerText = `in the city of ${recentEntry.latestRecord.cityName};`;
-		document.getElementById('log__weather__description').innerText = `when the weater was ${recentEntry.latestRecord.description},`;
-		document.getElementById('log__curr__temp').innerText = `& the temperature was ${recentEntry.latestRecord.currTemp} &deg;C,`;
-		document.getElementById('log__feeling').innerText = `I was feeling ${recentEntry.latestRecord.feelings}!`
+		document.getElementById('logDate').innerText = `On ${recentEntry.latestRecord.currDate},`;
+		document.getElementById('logCityName').innerText = `in the city of ${recentEntry.latestRecord.cityName};`;
+		document.getElementById('logWeatherDescription').innerText = `when the weater was ${recentEntry.latestRecord.description},`;
+		document.getElementById('logCurrTemp').innerText = `& the temperature was ${recentEntry.latestRecord.currTemp} &deg;C,`;
+		document.getElementById('logFeeling').innerText = `I was feeling ${recentEntry.latestRecord.feelings}!`
 
 		logBoard.classList.remove('hide');
 		errorBoard.classList.add('hide');
