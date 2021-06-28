@@ -11,7 +11,7 @@ const feelings = document.getElementById('feeling');
 const generateBtn = document.getElementById('generate');
 const errorBoard = document.getElementById('error__msg');
 const logBoard = document.querySelector('.weather__log');
-let catchData;
+
 
 /*
 * POSTDATA async function
@@ -123,7 +123,6 @@ const displayToUser = async (recentEntry) => {
 	console.log("In displayToUser");
 	console.log(recentEntry);
 	if (Object.keys(recentEntry).length !== 0) {
-		catchData = recentEntry;
 		document.getElementById('logDate').innerText = `On ${recentEntry.latestRecord.currDate},`;
 		document.getElementById('logCityName').innerText = `in the city of ` +
 														`${recentEntry.latestRecord.cityName};`;
@@ -134,8 +133,8 @@ const displayToUser = async (recentEntry) => {
 		document.getElementById('logFeeling').innerText = `I was feeling ` +
 														`${recentEntry.latestRecord.feelings}!`
 
-		logBoard.classList.remove('hide');
-		errorBoard.classList.add('hide');
+		logBoard.classList.remove('hide'); //Display weather log
+		errorBoard.classList.add('hide'); //Hide error message
 	}
 }
 
