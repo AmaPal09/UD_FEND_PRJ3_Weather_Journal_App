@@ -1,8 +1,7 @@
 //Global variables
 // const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?zip=94041';
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-const WEATHER_API_KEY = '&appid=3da249315989972b747443d739018cd3';
-
+const WEATHER_API_KEY = '&appid=3da249315989972b747443d739018cd3&units=imperial';
 /*
 * VARS FOR USER INPUT
 *
@@ -126,10 +125,14 @@ const displayToUser = async (recentEntry) => {
 	if (Object.keys(recentEntry).length !== 0) {
 		catchData = recentEntry;
 		document.getElementById('logDate').innerText = `On ${recentEntry.latestRecord.currDate},`;
-		document.getElementById('logCityName').innerText = `in the city of ${recentEntry.latestRecord.cityName};`;
-		document.getElementById('logWeatherDescription').innerText = `when the weater was ${recentEntry.latestRecord.description},`;
-		document.getElementById('logCurrTemp').innerText = `& the temperature was ${recentEntry.latestRecord.currTemp} &deg;C,`;
-		document.getElementById('logFeeling').innerText = `I was feeling ${recentEntry.latestRecord.feelings}!`
+		document.getElementById('logCityName').innerText = `in the city of ` +
+														`${recentEntry.latestRecord.cityName};`;
+		document.getElementById('logWeatherDescription').innerText = `when the weater was ` +
+														`${recentEntry.latestRecord.description},`;
+		document.getElementById('logCurrTemp').innerText = `& the temperature was ` +
+														`${recentEntry.latestRecord.currTemp}°F,`;
+		document.getElementById('logFeeling').innerText = `I was feeling ` +
+														`${recentEntry.latestRecord.feelings}!`
 
 		logBoard.classList.remove('hide');
 		errorBoard.classList.add('hide');
