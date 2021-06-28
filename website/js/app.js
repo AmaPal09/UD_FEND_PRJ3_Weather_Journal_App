@@ -124,24 +124,12 @@ const displayToUser = async (recentEntry) => {
 	console.log("In displayToUser");
 	console.log(recentEntry);
 	if (Object.keys(recentEntry).length !== 0) {
-		// displayErrorMsg("Log a valid entry to view recent entry");
-	// }
-	// else {
 		catchData = recentEntry;
-		const logDate =  document.getElementById('log__date');
-		logDate.innerText = await logDate.innerText + ' ' + recentEntry.latestRecord.currDate;
-
-		const logCurrTemp = document.getElementById('log__curr__temp');
-		logCurrTemp.innerText = logCurrTemp.innerText + ' ' + recentEntry.latestRecord.currTemp;
-
-		const logWeatherDesc = document.getElementById('log__weather__description');
-		logWeatherDesc.innerText = logWeatherDesc.innerText + ' ' + recentEntry.latestRecord.description;
-
-		const logCityName = document.getElementById('log__city__name');
-		logCityName.innerText = logCityName.innerText + ' ' + recentEntry.latestRecord.cityName;
-
-		const logFeelings = document.getElementById('log__feeling');
-		logFeelings.innerText = logFeelings.innerText + ' ' + recentEntry.latestRecord.feelings;
+		document.getElementById('log__date').innerText = `On ${recentEntry.latestRecord.currDate},`;
+		document.getElementById('log__city__name').innerText = `in the city of ${recentEntry.latestRecord.cityName};`;
+		document.getElementById('log__weather__description').innerText = `when the weater was ${recentEntry.latestRecord.description},`;
+		document.getElementById('log__curr__temp').innerText = `& the temperature was ${recentEntry.latestRecord.currTemp} &deg;C,`;
+		document.getElementById('log__feeling').innerText = `I was feeling ${recentEntry.latestRecord.feelings}!`
 
 		logBoard.classList.remove('hide');
 		errorBoard.classList.add('hide');
@@ -194,8 +182,8 @@ function submitForm(e) {
 
 function displayErrorMsg(msg) {
 	errorBoard.innerText = msg;
-	errorBoard.classList.remove('hide');
-	logBoard.classList.add('hide');
+	errorBoard.classList.remove('hide'); //Error Message visible
+	logBoard.classList.add('hide'); //Weather card hidden
 }
 
 /*
