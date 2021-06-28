@@ -10,6 +10,8 @@ const WEATHER_API_KEY = '&appid=3da249315989972b747443d739018cd3';
 const zip = document.getElementById('zip');
 const feelings = document.getElementById('feeling');
 const generateBtn = document.getElementById('generate');
+const errorBoard = document.getElementById('error__msg');
+const logBoard = document.querySelector('.weather__log');
 let catchData;
 
 /*
@@ -140,6 +142,9 @@ const displayToUser = async (recentEntry) => {
 
 		const logFeelings = document.getElementById('log__feeling');
 		logFeelings.innerText = logFeelings.innerText + ' ' + recentEntry.latestRecord.feelings;
+
+		logBoard.classList.remove('hide');
+		errorBoard.classList.add('hide');
 	}
 }
 
@@ -188,7 +193,9 @@ function submitForm(e) {
 }
 
 function displayErrorMsg(msg) {
-	document.getElementById('error__msg').innerText = msg;
+	errorBoard.innerText = msg;
+	errorBoard.classList.remove('hide');
+	logBoard.classList.add('hide');
 }
 
 /*

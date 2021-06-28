@@ -81,7 +81,11 @@ label {
     margin: 0 0 1rem 1rem;
     border: none;
     border-radius: 5%;
-    box-shadow: 0.4rem 0.4rem;
+    /*box-getRecentData: 0.4rem 0.4rem;*/
+}
+
+.btn:hover {
+	box-shadow: 0.4rem 0.4rem 0.4rem var(--shadow-color);
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -99,7 +103,30 @@ label {
   color: var(--special-text-color);
 }
 
+.weather__form:hover {
+	box-shadow: 0 0 0.5rem var(--shadow-color);
+}
+
+#error__msg {
+	padding: 1rem;
+	box-shadow: 0.5rem 0.5rem 0.4rem var(--shadow-color);
+	background-color: var(--special-background-color);
+	margin: 1.5rem 1.5rem 1.5rem 1rem;
+}
+
+.weather__log {
+	box-shadow: 0 0 0.7rem var(--shadow-color);
+}
+
 .weather__card {
 	margin: 1rem;
-	/*box-shadow: 0.3rem 0.3rem 5rem 0.2rem var(--special-background-color);*/
+	/*box-getRecentData: 0.3rem 0.3rem 5rem 0.2rem var(--special-background-color);*/
+}
+
+.error {
+	color: #b4324b;
+}
+
+.hide {
+	display: none;
 }
