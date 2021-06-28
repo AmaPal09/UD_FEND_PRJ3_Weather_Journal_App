@@ -1,11 +1,10 @@
-//Global variables
-// const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?zip=94041';
+/*
+* GLOBAL VARS
+*/
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
 const WEATHER_API_KEY = '&appid=3da249315989972b747443d739018cd3&units=imperial';
-/*
-* VARS FOR USER INPUT
-*
-*/
+
+//VARS FOR USER INPUT
 const zip = document.getElementById('zip');
 const feelings = document.getElementById('feeling');
 const generateBtn = document.getElementById('generate');
@@ -14,7 +13,12 @@ const logBoard = document.querySelector('.weather__log');
 
 
 /*
-* POSTDATA async function
+*	M A I N   F U N C T I O N S
+*/
+
+
+/*
+* postData ASYNC FUNCTION
 * @description: Makes a post request to the server to
 * 				post data.
 * @param {string} url: url to post to,
@@ -40,7 +44,6 @@ const postData = async (url = '', data = {}) => {
 		try {
 			console.log("Processing response");
 			const newData = await response.json();
-			// console.log("Got response");
 			console.log(newData);
 		    return newData;
 		}catch(error) {
@@ -51,16 +54,12 @@ const postData = async (url = '', data = {}) => {
 
 
 /*
-* GETWEATHERDATA async function
+* getWeatherData ASYNC FUNCTION
 * @description: Obtains weather data from Open Weather Maps by making
 * 				a get request for given zip code to open weather maps url
 * @return {json} response: Weather data from Open Weather Maps
 */
 const getWeatherData = async () => {
-	// const url = BASE_WEATHER_URL + WEATHER_API_KEY;
-// TODO: Remove hardcoded value for zip & feelings
-	// zip.value = '94041';
-	// feelings.value = 'Great!'
 	const url = BASE_WEATHER_URL+ zip.value + WEATHER_API_KEY;
 	const presentData = new Date();
 	console.log(url);
@@ -93,7 +92,7 @@ const getWeatherData = async () => {
 
 
 /*
-* GETRECENTDATA async function
+* getRecentData ASYNC FUNCTION
 * @description: Obtain recent weather data entry from the server by
 * 				making a get request to the server
 * @return {json} response: response from the server
@@ -113,12 +112,11 @@ const getRecentData = async () => {
 
 
 /*
-* DISPLAYTOUSER async function
+* displayToUser ASYNC FUNCTION
 * @description: Display recent weather data from server on the UI
 * 				to the user
 * @param  {object} data: Recent entry object from the server
 */
-//Display to the user
 const displayToUser = async (recentEntry) => {
 	console.log("In displayToUser");
 	console.log(recentEntry);
@@ -140,7 +138,7 @@ const displayToUser = async (recentEntry) => {
 
 
 /*
-* PRINTWEATHERDATA async function
+* printWeatherData ASYNC FUNCTION
 * @description: Calls to gets weather data from open weather maps
 * 				Calls to posting obtained weather data to server
 *				Calls to get the recent weather data entry from the server
@@ -158,7 +156,7 @@ const printWeatherData = async () => {
 
 
 /*
-* SUBMITFORM function
+* submitForm FUNCTION
 * @description: Prevents default submit of the generate button
 *				Calls printweatherdata funtion
 */
@@ -184,8 +182,8 @@ function submitForm(e) {
 
 function displayErrorMsg(msg) {
 	errorBoard.innerText = msg;
-	errorBoard.classList.remove('hide'); //Error Message visible
-	logBoard.classList.add('hide'); //Weather card hidden
+	errorBoard.classList.remove('hide'); //Display Error Message
+	logBoard.classList.add('hide'); //Hide weather log
 }
 
 /*
