@@ -35,8 +35,6 @@ label {
 	font-family: var(--page-title-family);
 	font-weight: var(--page-title-weight);
 	color: var(--page-title-color);
-	/*padding: 2rem 2rem 0 2rem;*/
-    /*margin: 0 1rem 1rem 1rem;*/
     margin: 2rem;
     padding: 1rem 0 0 0;
 }
@@ -47,8 +45,6 @@ label {
 	font-family: var(--regular-title-family);
 	font-weight: var(--regular-title-weight);
 	color: var(--regular-title-color);
-	/*padding: 0 0 0 1rem;*/
-	/*margin: 1rem 0 0 0;*/
 }
 
 /*Main Content*/
@@ -72,7 +68,6 @@ label {
 	flex-direction: column;
 	align-items: left;
 	justify-content: space-around;
-	/*padding: 1rem;*/
 }
 
 textarea {
@@ -89,11 +84,9 @@ textarea {
 	background-color: var(--special-background-color);
 	border: none;
 	outline: none;
-	/*width: 50vw*/
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  /*color: var(--special-text-color);*/
   color: var(--special-text-color);
   opacity: 0.7; /* Firefox */
   border: none;
@@ -118,8 +111,6 @@ textarea {
     padding: 0.3rem;
     margin: 1rem 0 0 0;
     border: none;
-    /*border-radius: 5%;*/
-    /*box-getRecentData: 0.4rem 0.4rem;*/
 }
 
 .btn:hover {
@@ -128,16 +119,8 @@ textarea {
 
 
 /*Style Hidden divs*/
-/*#error__msg {
-	padding: 1rem;
-	box-shadow: 0.5rem 0.5rem 0.4rem var(--shadow-color);
-	background-color: var(--special-background-color);
-	margin: 1.5rem 1.5rem 1.5rem 1rem;
-}*/
 
 .weather__log {
-	/*box-shadow: 0.5 0.5 0.4rem var(--shadow-color);*/
-	/*padding: 0.5rem;*/
 	padding: 1rem 2rem 2rem 2rem;
 	border: 0.2rem solid var(--special-background-color);
 	margin: 0 0 2rem 0;
@@ -147,17 +130,9 @@ textarea {
 	box-shadow: 0.5rem 0.5rem 0.4rem var(--shadow-color);
 }
 
-.weather__card {
-	/*margin: 1rem;*/
-}
-
 .error__box {
 	padding: 1rem 2rem 2rem 2rem;
-	/*box-shadow: 0.5rem 0.5rem 0.4rem var(--shadow-color);*/
 	border: 0.2rem solid var(--special-background-color);
-	/*background-color: var(--special-background-color);*/
-	/*margin: 1.5rem 1.5rem 1.5rem 1rem;*/
-	/*margin: 1.5rem 0;*/
 	margin: 0 0 2rem 0;
 }
 
@@ -174,6 +149,3 @@ textarea {
 .hide {
 	display: none;
 }
-
-
-/*@import url(responsive.css);*/
