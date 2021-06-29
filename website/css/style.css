@@ -109,12 +109,12 @@ label {
 
 
 /*Style Hidden divs*/
-#error__msg {
+/*#error__msg {
 	padding: 1rem;
 	box-shadow: 0.5rem 0.5rem 0.4rem var(--shadow-color);
 	background-color: var(--special-background-color);
 	margin: 1.5rem 1.5rem 1.5rem 1rem;
-}
+}*/
 
 .weather__log {
 	box-shadow: 0 0 0.7rem var(--shadow-color);
@@ -125,7 +125,11 @@ label {
 }
 
 .error {
-	color: #b4324b;
+	color: var(--error-color);
+	padding: 1rem;
+	box-shadow: 0.5rem 0.5rem 0.4rem var(--shadow-color);
+	background-color: var(--special-background-color);
+	margin: 1.5rem 1.5rem 1.5rem 1rem;
 }
 
 .hide {
