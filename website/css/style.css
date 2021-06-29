@@ -47,6 +47,11 @@ label {
 	color: var(--regular-title-color);
 }
 
+.big__content {
+	word-break: break-word;
+}
+
+
 /*Main Content*/
 .weather__journal {
 	width: 550px;
@@ -193,21 +198,6 @@ textarea {
 	.weather__journal {
 		width: 400px;
 	}
-
-	/*.weather__form {
-		padding: 1rem 2rem 2rem 2rem;
-		margin: 0 0 2rem 0;
-	}
-
-	.error__box {
-		padding: 1rem 2rem 2rem 2rem;
-		margin: 0 0 2rem 0;
-	}
-
-	.weather__log {
-		padding: 1rem 2rem 2rem 2rem;
-		margin: 0 0 2rem 0;
-	}*/
 }
 
 /*Extra Large Screen*/
@@ -220,19 +210,4 @@ textarea {
 	.weather__journal {
 		width: 650px;
 	}
-
-/*	.weather__form {
-		padding: 2rem 4rem 4rem 4rem;
-		margin: 0 0 4rem 0;
-	}
-
-	.error__box {
-		padding: 2rem 4rem 4rem 4rem;
-		margin: 0 0 4rem 0;
-	}
-
-	.weather__log {
-		padding: 2rem 4rem 4rem 4rem;
-		margin: 0 0 4rem 0;
-	}*/
 }
