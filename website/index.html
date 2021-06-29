@@ -13,30 +13,32 @@
 		<div class="weather__journal">
 			<!-- User input journal entry -->
 			<div class="weather__form">
+				<h2 class="div__title">Enter Log</h2>
 				<form class="journal__entry__form">
 					<label for="zip">Your zip code</label>
 					<textarea id="zip" rows="1" cols="20" maxlength= "10" placeholder="Enter zip code here" class="user__input"></textarea>
-					<label for="feeling">Your feelings today</label>
+					<label for="feeling">How are you feeling today?</label>
 					<textarea id="feeling" rows="3" cols="50" maxlength="150"
-						placeholder="How are you feeling today? Happy or grumpy" class="user__input"></textarea>
+						placeholder="Happy or grumpy" class="user__input"></textarea>
 				</form>
 				<button id="generate" class="btn" type="submit">Add Log Entry</button>
 			</div>
 			<!-- End user input -->
 
 			<!-- Display error messages here -->
-			<div class="error hide">
-				<p id="error__msg"></p>
+			<div class="error__box hide">
+				<h2 class="div__title">Error</h2>
+				<p id="error__msg" class="error">ERROR</p>
 			</div>
 			<!-- Display wearther log entry -->
 			<div class="weather__log hide">
 				<h2 class="div__title">Recent Entry</h2>
 				<div class="weather__card" id="entryHolder">
-					<p id="logDate"></p>
-					<p id="logCityName"></p>
-					<p id="logWeatherDescription"></p>
-					<p id="logCurrTemp"></p>
-					<p id="logFeeling"></p>
+					<p id="logDate">DATE</p>
+					<p id="logCityName">CITY</p>
+					<p id="logWeatherDescription">DESC</p>
+					<p id="logCurrTemp">TEMP</p>
+					<p id="logFeeling">FEEL</p>
 				</div>
 			</div>
 			<!-- End weather log Entry  -->
