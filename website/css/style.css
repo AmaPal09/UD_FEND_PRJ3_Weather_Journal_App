@@ -37,7 +37,8 @@ label {
 	color: var(--page-title-color);
 	/*padding: 2rem 2rem 0 2rem;*/
     /*margin: 0 1rem 1rem 1rem;*/
-    margin: 1rem;
+    margin: 2rem;
+    padding: 1rem 0 0 0;
 }
 
 
@@ -50,15 +51,20 @@ label {
 	/*margin: 1rem 0 0 0;*/
 }
 
+/*Main Content*/
+.weather__journal {
+	width: 50vw;
+}
 
 /*Style divs for user input*/
 .weather__form {
 	border: 0.2rem solid var(--special-background-color);
-	padding: 1rem;
+	padding: 1rem 2rem 2rem 2rem;
+	margin: 0 0 2rem 0;
 }
 
 .weather__form:hover {
-	box-shadow: 0.4rem 0.4rem 0.4rem var(--shadow-color);
+	box-shadow: 0.5rem 0.5rem 0.4rem var(--shadow-color);
 }
 
 .journal__entry__form {
@@ -83,7 +89,7 @@ textarea {
 	background-color: var(--special-background-color);
 	border: none;
 	outline: none;
-	width: 50vw
+	/*width: 50vw*/
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -117,7 +123,7 @@ textarea {
 }
 
 .btn:hover {
-	box-shadow: 0.4rem 0.4rem 0.4rem var(--shadow-color);
+	box-shadow: 0.5rem 0.5rem 0.4rem var(--shadow-color);
 }
 
 
@@ -132,8 +138,9 @@ textarea {
 .weather__log {
 	/*box-shadow: 0.5 0.5 0.4rem var(--shadow-color);*/
 	/*padding: 0.5rem;*/
-	padding: 1rem;
+	padding: 1rem 2rem 2rem 2rem;
 	border: 0.2rem solid var(--special-background-color);
+	margin: 0 0 2rem 0;
 }
 
 .weather__log:hover {
@@ -145,12 +152,13 @@ textarea {
 }
 
 .error__box {
-	padding: 1rem;
+	padding: 1rem 2rem 2rem 2rem;
 	/*box-shadow: 0.5rem 0.5rem 0.4rem var(--shadow-color);*/
 	border: 0.2rem solid var(--special-background-color);
 	/*background-color: var(--special-background-color);*/
 	/*margin: 1.5rem 1.5rem 1.5rem 1rem;*/
-	margin: 1.5rem 0;
+	/*margin: 1.5rem 0;*/
+	margin: 0 0 2rem 0;
 }
 
 .error__box:hover {
@@ -166,3 +174,6 @@ textarea {
 .hide {
 	display: none;
 }
+
+
+/*@import url(responsive.css);*/

@@ -1,0 +1,25 @@
+/*Responsive files*/
+@media screen and (max-width: 420px)
+{
+	* {
+		font-size: 14px;
+	}
+	.weather__journal {
+		width: 75vw;
+	}
+
+	.weather__form {
+		padding: 0.5rem 1rem 1rem 1rem;
+		margin: 0 0 1rem 0;
+	}
+
+	.weather__log {
+		padding: 0.5rem 1rem 1rem 1rem;
+		margin: 0 0 1rem 0;
+	}
+
+	.error__box {
+		padding: 0.5rem 1rem 1rem 1rem;
+		margin: 0 0 1rem 0;
+	}
+}
