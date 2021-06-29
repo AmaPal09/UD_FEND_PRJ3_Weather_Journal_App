@@ -23,7 +23,7 @@ const logBoard = document.querySelector('.weather__log');
 * 				post data.
 * @param {string} url: url to post to,
 * @param  {object} data: data that is to be posted
-* @return {json} response: response from the server
+* @returns {json} response: response from the server
 */
 const postData = async (url = '', data = {}) => {
 	if (Object.keys(data).length == 0) {
@@ -57,7 +57,7 @@ const postData = async (url = '', data = {}) => {
 * getWeatherData ASYNC FUNCTION
 * @description: Obtains weather data from Open Weather Maps by making
 * 				a get request for given zip code to open weather maps url
-* @return {json} response: Weather data from Open Weather Maps
+* @returns {json} response: Weather data from Open Weather Maps
 */
 const getWeatherData = async () => {
 	const url = BASE_WEATHER_URL+ zip.value + WEATHER_API_KEY;
@@ -95,7 +95,7 @@ const getWeatherData = async () => {
 * getRecentData ASYNC FUNCTION
 * @description: Obtain recent weather data entry from the server by
 * 				making a get request to the server
-* @return {json} response: response from the server
+* @returns {json} response: response from the server
 */
 const getRecentData = async () => {
 	const response = await fetch('/getData');
