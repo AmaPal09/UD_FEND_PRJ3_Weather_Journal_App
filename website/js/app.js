@@ -8,7 +8,9 @@ const WEATHER_API_KEY = '&appid=3da249315989972b747443d739018cd3&units=imperial'
 const zip = document.getElementById('zip');
 const feelings = document.getElementById('feeling');
 const generateBtn = document.getElementById('generate');
-const errorBoard = document.getElementById('error__msg');
+// const errorBoard = document.getElementById('error__msg');
+const errorBoard = document.querySelector('.error__box');
+const errorMsg = document.getElementById('error__msg');
 const logBoard = document.querySelector('.weather__log');
 
 
@@ -181,7 +183,7 @@ function submitForm(e) {
 }
 
 function displayErrorMsg(msg) {
-	errorBoard.innerText = msg;
+	errorMsg.innerText = msg;
 	errorBoard.classList.remove('hide'); //Display Error Message
 	logBoard.classList.add('hide'); //Hide weather log
 }
