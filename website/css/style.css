@@ -27,7 +27,7 @@ label {
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	padding: 2rem, 1rem;
+	/*padding: 2rem, 1rem;*/
 }
 
 .page__title {
@@ -35,8 +35,8 @@ label {
 	font-family: var(--page-title-family);
 	font-weight: var(--page-title-weight);
 	color: var(--page-title-color);
-    margin: 2rem;
-    padding: 1rem 0 0 0;
+    margin: 0.8rem;
+    padding: 0.4rem 0 0 0;
 }
 
 
@@ -49,14 +49,14 @@ label {
 
 /*Main Content*/
 .weather__journal {
-	width: 65vw;
+	width: 550px;
 }
 
 /*Style divs for user input*/
 .weather__form {
 	border: 0.2rem solid var(--special-background-color);
-	padding: 1.5rem 3rem 3rem 3rem;
-	margin: 0 0 3rem 0;
+	padding: 0.4rem 0.8rem 0.8rem 0.8rem;
+	margin: 0 0 0.8rem 0;
 }
 
 .weather__form:hover {
@@ -120,9 +120,9 @@ textarea {
 
 /*Style Hidden divs*/
 .weather__log {
-	padding: 1.5rem 3rem 3rem 3rem;
+	padding: 0.4rem 0.8rem 0.8rem 0.8rem;
 	border: 0.2rem solid var(--special-background-color);
-	margin: 0 0 3rem 0;
+	margin: 0 0 0.4rem 0;
 }
 
 .weather__log:hover {
@@ -130,9 +130,9 @@ textarea {
 }
 
 .error__box {
-	padding: 1.5rem 3rem 3rem 3rem;
+	padding: 0.4rem 0.8rem 0.8rem 0.8rem;
 	border: 0.2rem solid var(--special-background-color);
-	margin: 0 0 3rem 0;
+	margin: 0 0 0.8rem 0;
 }
 
 .error__box:hover {
@@ -158,8 +158,13 @@ textarea {
 		font-size: 14px;
 	}
 
+	.page__title {
+	    padding: 0.5rem 0 0 0;
+		margin: 1rem;
+	}
+
 	.weather__journal {
-		width: 95vw;
+		width: 300px;
 	}
 
 	.weather__form {
@@ -186,10 +191,10 @@ textarea {
 	}
 
 	.weather__journal {
-		width: 75vw;
+		width: 400px;
 	}
 
-	.weather__form {
+	/*.weather__form {
 		padding: 1rem 2rem 2rem 2rem;
 		margin: 0 0 2rem 0;
 	}
@@ -202,7 +207,7 @@ textarea {
 	.weather__log {
 		padding: 1rem 2rem 2rem 2rem;
 		margin: 0 0 2rem 0;
-	}
+	}*/
 }
 
 /*Extra Large Screen*/
@@ -213,10 +218,10 @@ textarea {
 	}
 
 	.weather__journal {
-		width: 50vw;
+		width: 650px;
 	}
 
-	.weather__form {
+/*	.weather__form {
 		padding: 2rem 4rem 4rem 4rem;
 		margin: 0 0 4rem 0;
 	}
@@ -229,5 +234,5 @@ textarea {
 	.weather__log {
 		padding: 2rem 4rem 4rem 4rem;
 		margin: 0 0 4rem 0;
-	}
+	}*/
 }
