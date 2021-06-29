@@ -9,9 +9,9 @@
 <body>
 	<div class="main__page">
 		<h1 class="page__title">Weather Journal App</h1>
-
+		<!-- Div for weather journal -->
 		<div class="weather__journal">
-
+			<!-- User input journal entry -->
 			<div class="weather__form">
 				<form class="journal__entry__form">
 					<label for="zip">Your zip code</label>
@@ -22,9 +22,12 @@
 				</form>
 				<button id="generate" class="btn" type="submit">Add Log Entry</button>
 			</div>
+			<!-- End user input -->
 
+			<!-- Display error messages here -->
 			<div id="error__msg" class="error hide">
 			</div>
+			<!-- Display wearther log entry -->
 			<div class="weather__log hide">
 				<h2 class="div__title">Recent Entry</h2>
 				<div class="weather__card" id="entryHolder">
@@ -35,7 +38,9 @@
 					<p id="logFeeling"></p>
 				</div>
 			</div>
+			<!-- End weather log Entry  -->
 		</div>
+		<!-- End weather journal -->
 
 		<!-- Div for animation elements -->
 		<div class="bubble--animation">
@@ -51,6 +56,7 @@
 			<div class="bubble"></div>
 		</div>
 	</div>
+	<!-- End Main page -->
 
 	<p id="response"></p>
 	<script src="js/app.js"></script>
