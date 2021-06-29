@@ -1,6 +1,6 @@
 /*Style for weather journal app*/
-@import url('var4main.css');
-@import url('animation.css');
+@import url(var4main.css);
+@import url(animation.css);
 
 html {
 	height: 100%;
