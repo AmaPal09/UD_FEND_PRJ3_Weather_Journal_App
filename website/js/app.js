@@ -3,6 +3,7 @@
 */
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
 const WEATHER_API_KEY = '&appid=3da249315989972b747443d739018cd3&units=imperial';
+let ERROR_FLAG = Boolean(false);
 
 //VARS FOR USER INPUT
 const zip = document.getElementById('zip');
@@ -76,10 +77,10 @@ const getWeatherData = async () => {
 			console.log(weatherData);
 			const newData = {};
 			newData.cityName = weatherData.name;
-			newData.currTemp = weatherData.main.temp;
-			newData.currTempFeelsLike = weatherData.main.feels_like;
-			newData.maxTemp = weatherData.main.temp_max;
-			newData.minTemp = weatherData.main.temp_min;
+			newData.currTemp = weatherData.main.temp.toFixed(2);
+			newData.currTempFeelsLike = weatherData.main.feels_like.toFixed(2);
+			newData.maxTemp = weatherData.main.temp_max.toFixed(2);
+			newData.minTemp = weatherData.main.temp_min.toFixed(2);
 			newData.description = weatherData.weather[0].description;
 			newData.currDate = presentData.toDateString();
 			newData.feelings = feelings.value;
@@ -121,15 +122,15 @@ const getRecentData = async () => {
 const displayToUser = async (recentEntry) => {
 	console.log("In displayToUser");
 	console.log(recentEntry);
-	if (Object.keys(recentEntry).length !== 0) {
-		document.getElementById('logDate').innerText = `On ${recentEntry.latestRecord.currDate},`;
-		document.getElementById('logCityName').innerText = `in the city of ` +
+	if (Object.keys(recentEntry).length !== 0 && !ERROR_FLAG) {
+		document.getElementById('logDate').innerText = `Date:- ${recentEntry.latestRecord.currDate},`;
+		document.getElementById('logCityName').innerText = `Location:- ` +
 														`${recentEntry.latestRecord.cityName};`;
-		document.getElementById('logWeatherDescription').innerText = `when the weater was ` +
+		document.getElementById('logWeatherDescription').innerText = `Weather:- ` +
 														`${recentEntry.latestRecord.description},`;
-		document.getElementById('logCurrTemp').innerText = `& the temperature was ` +
+		document.getElementById('logCurrTemp').innerText = `Current Temp:- ` +
 														`${recentEntry.latestRecord.currTemp}°F,`;
-		document.getElementById('logFeeling').innerText = `I was feeling ` +
+		document.getElementById('logFeeling').innerText = `Content:- ` +
 														`${recentEntry.latestRecord.feelings}!`
 
 		logBoard.classList.remove('hide'); //Display weather log
@@ -164,6 +165,7 @@ const printWeatherData = async () => {
 function submitForm(e) {
 	e.preventDefault();
 	//Validate if user input is blank
+	ERROR_FLAG = false;
 	if (zip.value == "" || feelings.value == "") {
 		if (zip.value == "" && feelings.value == "") {
 			displayErrorMsg("Please enter zip code and feelings");
@@ -182,6 +184,7 @@ function submitForm(e) {
 }
 
 function displayErrorMsg(msg) {
+	ERROR_FLAG = true;
 	errorMsg.innerText = msg;
 	errorBoard.classList.remove('hide'); //Display Error Message
 	logBoard.classList.add('hide'); //Hide weather log
