@@ -49,14 +49,14 @@ label {
 
 /*Main Content*/
 .weather__journal {
-	width: 50vw;
+	width: 65vw;
 }
 
 /*Style divs for user input*/
 .weather__form {
 	border: 0.2rem solid var(--special-background-color);
-	padding: 1rem 2rem 2rem 2rem;
-	margin: 0 0 2rem 0;
+	padding: 1.5rem 3rem 3rem 3rem;
+	margin: 0 0 3rem 0;
 }
 
 .weather__form:hover {
@@ -119,11 +119,10 @@ textarea {
 
 
 /*Style Hidden divs*/
-
 .weather__log {
-	padding: 1rem 2rem 2rem 2rem;
+	padding: 1.5rem 3rem 3rem 3rem;
 	border: 0.2rem solid var(--special-background-color);
-	margin: 0 0 2rem 0;
+	margin: 0 0 3rem 0;
 }
 
 .weather__log:hover {
@@ -131,9 +130,9 @@ textarea {
 }
 
 .error__box {
-	padding: 1rem 2rem 2rem 2rem;
+	padding: 1.5rem 3rem 3rem 3rem;
 	border: 0.2rem solid var(--special-background-color);
-	margin: 0 0 2rem 0;
+	margin: 0 0 3rem 0;
 }
 
 .error__box:hover {
@@ -148,4 +147,87 @@ textarea {
 
 .hide {
 	display: none;
+}
+
+
+/*Responsive Layout*/
+/*Small Screen*/
+@media screen and (max-width: 450px)
+{
+	* {
+		font-size: 14px;
+	}
+
+	.weather__journal {
+		width: 95vw;
+	}
+
+	.weather__form {
+		padding: 0.5rem 1rem 1rem 1rem;
+		margin: 0 0 1rem 0;
+	}
+
+	.error__box {
+		padding: 0.5rem 1rem 1rem 1rem;
+		margin: 0 0 1rem 0;
+	}
+
+	.weather__log {
+		padding: 0.5rem 1rem 1rem 1rem;
+		margin: 0 0 1rem 0;
+	}
+}
+
+/*Medium Screen*/
+@media screen and (min-width: 451px) and (max-width: 900px)
+{
+	* {
+		font-size: 16px;
+	}
+
+	.weather__journal {
+		width: 75vw;
+	}
+
+	.weather__form {
+		padding: 1rem 2rem 2rem 2rem;
+		margin: 0 0 2rem 0;
+	}
+
+	.error__box {
+		padding: 1rem 2rem 2rem 2rem;
+		margin: 0 0 2rem 0;
+	}
+
+	.weather__log {
+		padding: 1rem 2rem 2rem 2rem;
+		margin: 0 0 2rem 0;
+	}
+}
+
+/*Extra Large Screen*/
+@media screen and (min-width: 1101px)
+{
+	* {
+		font-size: 20px;
+	}
+
+	.weather__journal {
+		width: 50vw;
+	}
+
+	.weather__form {
+		padding: 2rem 4rem 4rem 4rem;
+		margin: 0 0 4rem 0;
+	}
+
+	.error__box {
+		padding: 2rem 4rem 4rem 4rem;
+		margin: 0 0 4rem 0;
+	}
+
+	.weather__log {
+		padding: 2rem 4rem 4rem 4rem;
+		margin: 0 0 4rem 0;
+	}
 }
