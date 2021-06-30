@@ -59,19 +59,19 @@ const postData = async (url = '', data = {}) => {
 * @returns {json} response: Weather data from Open Weather Maps
 */
 const getWeatherData = async () => {
+	//create url
 	const url = BASE_WEATHER_URL+ zip.value + WEATHER_API_KEY;
 	const presentData = new Date();
-	// console.log(url);
 
+	//get request to open weather maps api
 	const response = await fetch(url);
+	// process the response from the get request
 	try {
-		// console.log("Processing fetch response");
 		const weatherData = await response.json();
 		if (weatherData.cod == '404' || weatherData.cod == '400') {
 			displayErrorMsg("Please enter valid US zip code. \nFor other countries, enter zipcode, country code \neg: 411021,IN");
 		}
 		else {
-			// console.log(weatherData);
 			const newData = {};
 			newData.cityName = weatherData.name;
 			newData.currTemp = weatherData.main.temp.toFixed(2);
@@ -81,10 +81,13 @@ const getWeatherData = async () => {
 			newData.description = weatherData.weather[0].description;
 			newData.currDate = presentData.toDateString();
 			newData.feelings = feelings.value;
+
+			// Return processed data
 			return newData;
 		}
 	}
 	catch(error) {
+		// error handling for error in get request
 		console.log("error", error);
 	}
 }
@@ -97,14 +100,15 @@ const getWeatherData = async () => {
 * @returns {json} response: response from the server
 */
 const getRecentData = async () => {
+	// get request to the server
 	const response = await fetch('/getData');
+	//process response to the get request
 	try {
-		// console.log("Processing getData");
 		const recentEntry = await response.json();
-		// console.log(recentEntry.latestRecord);
 		return recentEntry;
 	}
 	catch(error) {
+		//error handling for error in get request
 		console.log("error", error);
 	}
 }
@@ -114,12 +118,12 @@ const getRecentData = async () => {
 * displayToUser ASYNC FUNCTION
 * @description: Display recent weather data from server on the UI
 * 				to the user
-* @param  {object} data: Recent entry object from the server
+* @param: {object} data: Recent entry object from the server
 */
 const displayToUser = async (recentEntry) => {
-	// console.log("In displayToUser");
-	// console.log(recentEntry);
-	if (Object.keys(recentEntry).length !== 0 && !ERROR_FLAG) {
+	if (Object.keys(recentEntry).length !== 0 && !ERROR_FLAG)
+	{
+		// update webpage elements with text
 		document.getElementById('logDate').innerText = `Date:- ${recentEntry.latestRecord.currDate},`;
 		document.getElementById('logCityName').innerText = `Location:- ` +
 														`${recentEntry.latestRecord.cityName};`;
@@ -146,7 +150,6 @@ const displayToUser = async (recentEntry) => {
 const printWeatherData = async () => {
 	getWeatherData()
 	.then((data) => {
-		// console.log(data);
 		postData('/addRating', data);
 	})
 	.then( () => getRecentData() )
@@ -180,6 +183,12 @@ function submitForm(e) {
 	}
 }
 
+
+/*
+* displayErrorMsg FUNCTION
+* @description: Displays the error messages received on to the webpage
+* @param: {string} msg- error message
+*/
 function displayErrorMsg(msg) {
 	ERROR_FLAG = true;
 	errorMsg.innerText = msg;
