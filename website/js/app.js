@@ -124,16 +124,16 @@ const displayToUser = async (recentEntry) => {
 	if (Object.keys(recentEntry).length !== 0 && !ERROR_FLAG)
 	{
 		// update webpage elements with text
-		document.getElementById('logDate').innerText = `Date:- ` +
-								`${recentEntry.latestRecord.currDate},`;
-		document.getElementById('logCityName').innerText = `Location:- ` +
-								`${recentEntry.latestRecord.cityName};`;
-		document.getElementById('logWeatherDescription').innerText = `Weather:- ` +
-								`${recentEntry.latestRecord.description},`;
-		document.getElementById('logCurrTemp').innerText = `Current Temp:- ` +
-								`${recentEntry.latestRecord.currTemp}°F,`;
-		document.getElementById('logFeeling').innerText = `Content:- ` +
-								`${recentEntry.latestRecord.feelings}!`
+		document.getElementById('logDate').innerHTML = "Date:-  "+
+								recentEntry.latestRecord.currDate + ",";
+		document.getElementById('logCityName').innerHTML = "Location:- " +
+								recentEntry.latestRecord.cityName + ";";
+		document.getElementById('logWeatherDescription').innerHTML = "Weather:- " +
+								recentEntry.latestRecord.description + ",";
+		document.getElementById('logCurrTemp').innerHTML = "Current Temp:- " +
+								recentEntry.latestRecord.currTemp + "°F,";
+		document.getElementById('logFeeling').innerHTML = "Content:- " +
+								recentEntry.latestRecord.feelings + "!";
 
 		logBoard.classList.remove('hide'); //Display weather log
 		errorBoard.classList.add('hide'); //Hide error message
