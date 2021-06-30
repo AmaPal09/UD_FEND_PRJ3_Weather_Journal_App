@@ -28,11 +28,8 @@ const logBoard = document.querySelector('.weather__log');
 * @returns {json} response: response from the server
 */
 const postData = async (url = '', data = {}) => {
-	if (Object.keys(data).length == 0) {
-		console.log("undefined data");
-	}
-	else {
-		console.log(data);
+	if (Object.keys(data).length !== 0) {
+		// console.log(data);
 		const response = await fetch( url, {
 			method: 'POST',
 			credentials: 'same-origin',
@@ -44,9 +41,9 @@ const postData = async (url = '', data = {}) => {
 		});
 
 		try {
-			console.log("Processing response");
+			// console.log("Processing response");
 			const newData = await response.json();
-			console.log(newData);
+			// console.log(newData);
 		    return newData;
 		}catch(error) {
 			console.log("error", error);
@@ -64,17 +61,17 @@ const postData = async (url = '', data = {}) => {
 const getWeatherData = async () => {
 	const url = BASE_WEATHER_URL+ zip.value + WEATHER_API_KEY;
 	const presentData = new Date();
-	console.log(url);
+	// console.log(url);
 
 	const response = await fetch(url);
 	try {
-		console.log("Processing fetch response");
+		// console.log("Processing fetch response");
 		const weatherData = await response.json();
 		if (weatherData.cod == '404' || weatherData.cod == '400') {
-			displayErrorMsg("Please enter valid US zip code. \nFor other countries, enter zipcode, country code eg: 411021,IN");
+			displayErrorMsg("Please enter valid US zip code. \nFor other countries, enter zipcode, country code \neg: 411021,IN");
 		}
 		else {
-			console.log(weatherData);
+			// console.log(weatherData);
 			const newData = {};
 			newData.cityName = weatherData.name;
 			newData.currTemp = weatherData.main.temp.toFixed(2);
@@ -102,9 +99,9 @@ const getWeatherData = async () => {
 const getRecentData = async () => {
 	const response = await fetch('/getData');
 	try {
-		console.log("Processing getData");
+		// console.log("Processing getData");
 		const recentEntry = await response.json();
-		console.log(recentEntry.latestRecord);
+		// console.log(recentEntry.latestRecord);
 		return recentEntry;
 	}
 	catch(error) {
@@ -120,8 +117,8 @@ const getRecentData = async () => {
 * @param  {object} data: Recent entry object from the server
 */
 const displayToUser = async (recentEntry) => {
-	console.log("In displayToUser");
-	console.log(recentEntry);
+	// console.log("In displayToUser");
+	// console.log(recentEntry);
 	if (Object.keys(recentEntry).length !== 0 && !ERROR_FLAG) {
 		document.getElementById('logDate').innerText = `Date:- ${recentEntry.latestRecord.currDate},`;
 		document.getElementById('logCityName').innerText = `Location:- ` +
@@ -149,7 +146,7 @@ const displayToUser = async (recentEntry) => {
 const printWeatherData = async () => {
 	getWeatherData()
 	.then((data) => {
-		console.log(data);
+		// console.log(data);
 		postData('/addRating', data);
 	})
 	.then( () => getRecentData() )

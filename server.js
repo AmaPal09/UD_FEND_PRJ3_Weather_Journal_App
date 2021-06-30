@@ -72,7 +72,6 @@ specified callback function.
 */
 app.get('/', (req, res) => {
 	console.log("Get request");
-	// console.log(JSON.stringfy(projectData));
 	res.send(projectData);
 });
 
@@ -83,8 +82,9 @@ app.get('/', (req, res) => {
 */
 // Get request for getData route
 const getData = (req, res) => {
-	console.log("Get data get request");
-	console.log(projectData);
+	console.log("Processing get data request");
+
+	//send data as response to the request
 	res.send(projectData);
 }
 
@@ -98,6 +98,9 @@ app.get('/getData', getData);
 * @param res: response sent with details of status and projectData
 */
 app.post('/addRating', (req, res) => {
+	console.log("Processing post data request");
+
+	//add data to server
 	data.cityName = req.body.cityName;
 	data.currTemp = req.body.currTemp;
 	data.currTempFeelsLike = req.body.currTempFeelsLike;
@@ -107,9 +110,11 @@ app.post('/addRating', (req, res) => {
 	data.currDate = req.body.currDate;
 	data.feelings = req.body.feelings;
 	projectData.latestRecord = data;
-	console.log(data);
+
+	//send response to the request
 	res.send(projectData);
 });
+
 
 // Keep the server running and listen for activity
 app.listen(port, ()=>{
