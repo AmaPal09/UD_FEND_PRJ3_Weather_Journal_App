@@ -32,24 +32,21 @@ Below listed are few of the important coding sections in these files that ensure
 the project requirement and functional flow of the project.
 
 - **Get request to get data from Open Weather Maps API**
+    Asynchronus function ```getWeatherData``` in app.js uses the API credentials and zip code provided by the user to get data from Open Weather Maps API. This data is then needs to be stored on the server
+    ![getWeatherData function](website/images/getWeatherData.png)
 
-Asynchronus function ```getWeatherData``` in app.js uses the API credentials and zip code provided by the user to get data from Open Weather Maps API. This data is then needs to be stored on the server
-![getWeatherData function](website/images/getWeatherData.png)
 
-
-- **Post request for data received from API and user to the server**
-
+- **Post request for data received from API and user to the server	:-**
 Asynchronus function ```postData``` in app.js uses the post route(url) and the data to be posted to make a post request to the server to store the data on the server side.
 ![postData function](website/images/postData.png)
 
 
-- **Get request to get data from the server**
-
+- **Get request to get data from the server		:-**
 Asynchronus function ```getRecentData``` in app.js uses the get route(url) to make a get request to the server. When it receives data from the server it processes it further.
 ![getRecentData function](website/images/getRecentData.png)
 
 
-- **Post route to load data on the server**
+- **Post route to load data on the server	:-**
 
 For route ```/addRating```, server.js executes the post request to load data to the app instance on the server.
 ![addRating function](website/images/addRating.png)
