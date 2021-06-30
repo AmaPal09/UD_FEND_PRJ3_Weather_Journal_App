@@ -1,0 +1,21 @@
+{
+  "name": "Weather Journal App",
+  "version": "1.0.0",
+  "description": "Weather Journal App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "GitHub",
+    "url": "https://github.com/AmaPal09/UD_FEND_PRJ3_Weather_Journal_App"
+  },
+  "author": "Amarja",
+  // TODO: Launch on Horeko and add link here
+  // "homepage": "",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
