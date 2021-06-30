@@ -56,7 +56,7 @@ the project requirement and functional flow of the project.
 
 
 - **Dynamically Update UI 	:-**
-	Asynchronus function ```displayToUser``` in app.js updates the UI dynamicall
+	Asynchronus function ```displayToUser``` in app.js updates the UI dynamically
 	![displayToUser function](website/images/displayToUser.png)
 
 
